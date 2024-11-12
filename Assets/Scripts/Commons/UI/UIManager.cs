@@ -1,8 +1,8 @@
 ﻿using Assets.Scripts.Commons.Enums;
+using StarterAssets;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.Commons.UI
@@ -11,6 +11,8 @@ namespace Assets.Scripts.Commons.UI
     {
         private static UIManager instance;
         public static UIManager Instance => instance;
+
+        [SerializeField] private StarterAssetsInputs player;
 
         // Panel de Indicaciones
         [Header("Panel de Indicaciones")]
@@ -92,7 +94,9 @@ namespace Assets.Scripts.Commons.UI
 
         public void ShowPanelQuestionsAnswersAndAsignQuestionsAnswers(string question, string answerA, string answerB)
         {
+            if (player == null) player = FindFirstObjectByType<StarterAssetsInputs>();
             Cursor.lockState = CursorLockMode.None;
+            player.DisableInput();
             ShowPanel(UIPanelTypeEnum.QuestionsAnswers);
             AsignQuestionsAnswers(question, answerA, answerB);
         }
@@ -149,6 +153,7 @@ namespace Assets.Scripts.Commons.UI
         private void OnSelectedAnswer(ActionEnum action)
         {
             GameManager.GameManager.GetGameManager().GetDecisionsManager().ExecuteAction(action);
+            player.EnableInput();
         }   
     }
 }
