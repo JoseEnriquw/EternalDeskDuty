@@ -20,8 +20,15 @@ namespace StarterAssets
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 
+        private PlayerInput playerInput;
+
+        void Awake()
+        {
+            playerInput = GetComponent<PlayerInput>();
+        }
+
 #if ENABLE_INPUT_SYSTEM
-		public void OnMove(InputValue value)
+        public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
 		}
@@ -75,6 +82,16 @@ namespace StarterAssets
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
-	}
+
+        public void EnableInput()
+        {
+            playerInput.enabled = true;
+        }
+
+        public void DisableInput()
+        {
+            playerInput.enabled = false;
+        }
+    }
 	
 }

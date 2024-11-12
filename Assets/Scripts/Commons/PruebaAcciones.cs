@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Commons.Constants;
 using Assets.Scripts.Commons.Enums;
 using Assets.Scripts.Commons.UI;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Assets.Scripts.Commons
@@ -20,6 +21,14 @@ namespace Assets.Scripts.Commons
                     UIManager.Instance.ShowPanelQuestionsAnswersAndAsignQuestionsAnswers("Option A or B?", "Option A", "Option B");
                     interacted = true;
                 }
+            }
+                
+        }
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.CompareTag(Tags.Player) && !interacted)
+            {
+                UIManager.Instance.HidePanel(Commons.Enums.UIPanelTypeEnum.Indications);
             }
                 
         }

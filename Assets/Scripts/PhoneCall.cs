@@ -38,11 +38,17 @@ namespace Assets.Scripts
                 {
                     isCalled = true;
                     audioSource.Stop();
+                    UIManager.Instance.HidePanel(Commons.Enums.UIPanelTypeEnum.Indications);
                     CustomTimer.Instance.ResetTimer();
                     GameManager.GetGameManager().RestartScene();
                 }
             }
-            else
+
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag(Tags.Player) && isCalling)
             {
                 UIManager.Instance.HidePanel(Commons.Enums.UIPanelTypeEnum.Indications);
             }
