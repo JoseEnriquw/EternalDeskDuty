@@ -25,6 +25,9 @@ namespace Assets.Scripts.Commons.UI
         [SerializeField] private TextMeshProUGUI txtQuestion,txtAnswerA,txtAnswerB;
         [SerializeField] private Button buttonAnswerA, buttonAnswerB;
 
+        [Header("Panel Fichero")]
+        [SerializeField] private GameObject PanelFichero;
+
         private Dictionary<UIPanelTypeEnum, GameObject> panels;
 
         private void Awake()
@@ -46,7 +49,8 @@ namespace Assets.Scripts.Commons.UI
             panels = new Dictionary<UIPanelTypeEnum, GameObject>
             {
                 { UIPanelTypeEnum.Indications, panelIndications },
-                { UIPanelTypeEnum.QuestionsAnswers, panelQuestionsAnswers }
+                { UIPanelTypeEnum.QuestionsAnswers, panelQuestionsAnswers },
+                { UIPanelTypeEnum.Fichero, PanelFichero }
             };
 
             InicialiceEventsButtons();
@@ -99,6 +103,14 @@ namespace Assets.Scripts.Commons.UI
             player.DisableInput();
             ShowPanel(UIPanelTypeEnum.QuestionsAnswers);
             AsignQuestionsAnswers(question, answerA, answerB);
+        }
+
+        public void ShowPanelFicheros()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            ShowPanel(UIPanelTypeEnum.Fichero);
+           
         }
 
         public void AsignTextIndications(string text)
