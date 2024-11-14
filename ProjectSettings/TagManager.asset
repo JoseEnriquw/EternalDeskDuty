@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
-  - door
+  - Door
   - Llamado
   - Sit
   - Cafetera
   - Npc
+  - Waiting
   layers:
   - Default
   - TransparentFX
