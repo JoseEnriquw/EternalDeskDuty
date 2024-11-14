@@ -1,3 +1,4 @@
+using Assets.Scripts.Commons.Constants;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -164,13 +165,13 @@ public class Leonard_Coffe : MonoBehaviour
         string tag = otherObject.tag;
         switch (tag)
         {
-            case "Cafetera":
+            case Tags.Cafetera:
                 handleCafetera(otherObject);
                 break;
-            case "Sit":
+            case Tags.Sit:
                handleDesk(otherObject);
                 break;
-            case "Llamado":
+            case Tags.Llamado:
                 handleCall(otherObject);
                 break;
             default:

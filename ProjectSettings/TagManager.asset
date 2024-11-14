@@ -4,18 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - door
-  - button f4
-  - button f5
-  - button f3
-  - button f2
-  - button f1
-  - button f6
   - CinemachineTarget
-  - Cafetera
-  - waiting
-  - Sit
+  - Door
   - Llamado
+  - Sit
+  - Cafetera
+  - Npc
+  - Waiting
   layers:
   - Default
   - TransparentFX
@@ -25,8 +20,8 @@ TagManager:
   - UI
   - Floor
   - NPC
-  - 
-  - 
+  - Player
+  - Door
   - 
   - 
   - 
