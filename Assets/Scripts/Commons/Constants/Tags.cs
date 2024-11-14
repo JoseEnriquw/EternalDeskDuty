@@ -5,5 +5,6 @@ namespace Assets.Scripts.Commons.Constants
     {
         public const string Player = "Player";
         public const string Cafetera = "Cafetera";
+        public const string Npc = "Npc";
     }
 }

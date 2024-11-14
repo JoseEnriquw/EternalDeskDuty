@@ -6,19 +6,10 @@ TagManager:
   tags:
   - CinemachineTarget
   - door
-  tags:
-  - door
-  - button f4
-  - button f5
-  - button f3
-  - button f2
-  - button f1
-  - button f6
-  - CinemachineTarget
-  - Cafetera
-  - waiting
-  - Sit
   - Llamado
+  - Sit
+  - Cafetera
+  - Npc
   layers:
   - Default
   - TransparentFX
@@ -30,8 +21,6 @@ TagManager:
   - NPC
   - Player
   - Door
-  - 
-  - 
   - 
   - 
   - 

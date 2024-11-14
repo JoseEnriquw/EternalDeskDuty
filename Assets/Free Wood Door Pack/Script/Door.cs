@@ -1,24 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Scripts.Commons.Constants;
 using UnityEngine;
 
-public class PlayerDoorController : MonoBehaviour
+public class DoorController : MonoBehaviour
 {
     public bool open = false;
     public float smooth = 1.0f;
     public float doorOpenAngle = -90.0f;
     public float doorCloseAngle = 0.0f;
+    public bool controlledByPlayer = true; 
+    public bool controlledByNPC = false;   
+
     public AudioSource audioSource;
     public AudioClip openDoorSound;
     public AudioClip closeDoorSound;
 
-    private bool playerInRange = false; // Para verificar si el jugador está cerca
-    private Transform doorTransform; // Referencia al objeto hijo 'Door'
+    private Transform doorTransform;
+    private bool playerInRange = false; // Solo para control de jugador
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        // Obtén el componente hijo 'Door' (suponiendo que es un hijo directo)
         doorTransform = transform.Find("Door");
         if (doorTransform == null)
         {
@@ -28,13 +29,11 @@ public class PlayerDoorController : MonoBehaviour
 
     void Update()
     {
-        // Verifica si el jugador toca en la puerta y presiona "E"
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (controlledByPlayer && playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             ToggleDoor();
         }
 
-        // Movimiento suave de la puerta solo si 'Door' existe
         if (doorTransform != null)
         {
             float targetAngle = open ? doorOpenAngle : doorCloseAngle;
@@ -43,31 +42,52 @@ public class PlayerDoorController : MonoBehaviour
         }
     }
 
-    void ToggleDoor()
+    void ToggleDoor(bool? shouldOpen = null)
     {
-        // Cambia el estado de la puerta
-        open = !open;
-
-        // Selecciona el sonido adecuado
-        audioSource.clip = open ? openDoorSound : closeDoorSound;
-        audioSource.Play();
+        if (shouldOpen.HasValue)
+        {
+            if (open != shouldOpen.Value)
+            {
+                open = shouldOpen.Value;
+                PlayAudio();
+            }
+        }
+        else
+        {
+            open = !open;
+            PlayAudio();
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        // Activa el rango si el jugador está cerca
-        if (other.CompareTag("Player"))
+        if (controlledByPlayer && other.CompareTag(Tags.Player))
         {
             playerInRange = true;
+        }
+
+        if (controlledByNPC && other.CompareTag(Tags.Npc))
+        {
+            ToggleDoor(true);
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        // Desactiva el rango cuando el jugador se aleja
-        if (other.CompareTag("Player"))
+        if (controlledByPlayer && other.CompareTag(Tags.Player))
         {
             playerInRange = false;
         }
+
+        if (controlledByNPC && other.CompareTag(Tags.Npc))
+        {
+            ToggleDoor(false);
+        }
+    }
+
+    private void PlayAudio()
+    {
+        audioSource.clip = open ? openDoorSound : closeDoorSound;
+        audioSource.Play();
     }
 }
