@@ -221,7 +221,7 @@ public class Leonard_Coffe : MonoBehaviour
     private void Sit()
     { 
         if (!isSit)
-        {          
+        {         
           
             transform.position = sitPoint.position;
             transform.rotation = sitPoint.rotation;           
