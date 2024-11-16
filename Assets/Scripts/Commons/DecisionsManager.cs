@@ -24,7 +24,7 @@ namespace Assets.Scripts.Commons
             // Lógica para mapear acciones a consecuencias
             return action switch
             {
-                ActionEnum.AnswerQuestion => ConsequenceEnum.ConsequenceA,
+                ActionEnum.OptionA => ConsequenceEnum.ConsequenceA,
                 ActionEnum.OptionB => ConsequenceEnum.ConsequenceB,
                 _ => throw new ArgumentException("Acción no reconocida"),
             };

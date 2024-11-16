@@ -40,7 +40,7 @@ namespace Assets.Scripts
                     audioSource.Stop();
                     UIManager.Instance.HidePanel(Commons.Enums.UIPanelTypeEnum.Indications);
                     CustomTimer.Instance.ResetTimer();
-                    GameManager.GetGameManager().RestartScene(2f);
+                    GameManager.GetGameManager().RestartScene();
                 }
             }
 

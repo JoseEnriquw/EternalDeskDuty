@@ -18,7 +18,7 @@ namespace Assets.Scripts.Commons
                 UIManager.Instance.ShowPanelIndicationsAnAddIndications("Presione \"E\" para interactuar!");
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    UIManager.Instance.ShowPanelQuestionsAnswersAndAsignQuestionsAnswers("Option A or B?", "Option A", "Option B", ActionEnum.AnswerQuestion, ActionEnum.OptionB);
+                    UIManager.Instance.ShowPanelQuestionsAnswersAndAsignQuestionsAnswers("Option A or B?", "Option A", "Option B");
                     interacted = true;
                 }
             }
