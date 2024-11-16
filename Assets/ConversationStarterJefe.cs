@@ -7,6 +7,7 @@ using UnityEngine;
 public class ConversationStarterJefe : MonoBehaviour
 {
     [SerializeField] private NPCConversation myConversation;
+    [SerializeField] private float waitSecondsRestart;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,4 +20,11 @@ public class ConversationStarterJefe : MonoBehaviour
            // GameManager.GetGameManager().SetEnablePlayerInput(true);
         }
     }
+
+    public void ReiniciarEscena()
+    {
+        
+        GameManager.GetGameManager().RestartScene(waitSecondsRestart);
+    }
+    
 }
