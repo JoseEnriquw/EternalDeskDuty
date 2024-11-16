@@ -123,5 +123,10 @@ namespace Assets.Scripts.Character
         {
             playerInput.enabled = enable;
         }
+        private void OnDestroy()
+        {
+            GameManager.GetGameManager().OnChangePlayerInput-=SetEnablePlayerInput;
+
+        }
     }
 }
