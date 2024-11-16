@@ -52,7 +52,7 @@ namespace Assets.Scripts.Commons.UI
                 { UIPanelTypeEnum.Fichero, PanelFichero }
             };
 
-            InicialiceEventsButtons();
+            
         }
 
         public void ShowPanel(UIPanelTypeEnum typePanel)
@@ -96,12 +96,14 @@ namespace Assets.Scripts.Commons.UI
             }
         }
 
-        public void ShowPanelQuestionsAnswersAndAsignQuestionsAnswers(string question, string answerA, string answerB)
+        public void ShowPanelQuestionsAnswersAndAsignQuestionsAnswers(string question, string answerA, string answerB, ActionEnum actionA, ActionEnum actionB)
         {
             Cursor.lockState = CursorLockMode.None;
             GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
             ShowPanel(UIPanelTypeEnum.QuestionsAnswers);
+
             AsignQuestionsAnswers(question, answerA, answerB);
+            InicialiceEventsButtons(actionA, actionB);
         }
 
         public void ShowPanelFicheros()
@@ -124,12 +126,12 @@ namespace Assets.Scripts.Commons.UI
             }
         }
 
-        private void InicialiceEventsButtons()
+        private void InicialiceEventsButtons(ActionEnum actionA, ActionEnum actionB)
         {
             if (buttonAnswerA != null)
             {
                 buttonAnswerA.onClick.RemoveAllListeners();
-                buttonAnswerA.onClick.AddListener(()=>OnSelectedAnswer(ActionEnum.OptionA));
+                buttonAnswerA.onClick.AddListener(()=>OnSelectedAnswer(actionA));
             }
             else
             {
@@ -139,7 +141,7 @@ namespace Assets.Scripts.Commons.UI
             if (buttonAnswerB != null)
             {
                 buttonAnswerB.onClick.RemoveAllListeners();
-                buttonAnswerB.onClick.AddListener(()=>OnSelectedAnswer(ActionEnum.OptionB));
+                buttonAnswerB.onClick.AddListener(()=>OnSelectedAnswer(actionB));
             }
             else
             {

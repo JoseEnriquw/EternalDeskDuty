@@ -1,6 +1,7 @@
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
+using System.Collections;
 
 namespace Assets.Scripts.Commons.GameManager
 {
@@ -27,9 +28,11 @@ namespace Assets.Scripts.Commons.GameManager
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }  
-        public void RestartScene()
+        public void RestartScene(float seconds)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            StartCoroutine(EjecutarConDelay(seconds, () => { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }));
+            
+            
         }
 
         public void GoToScene(int scene)
@@ -50,6 +53,14 @@ namespace Assets.Scripts.Commons.GameManager
         public void SetEnablePlayerInput(bool enable)
         {
             OnChangePlayerInput?.Invoke(enable);
+        }
+        IEnumerator EjecutarConDelay(float seconds, Action action)
+        {
+            yield return new WaitForSeconds(seconds);
+
+            // Código que se ejecuta después del delay
+            Debug.Log($"Han pasado {seconds} segundos");
+            action?.Invoke();
         }
     }
 }

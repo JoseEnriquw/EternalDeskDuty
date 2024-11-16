@@ -12,7 +12,7 @@ namespace Assets.Scripts.Commons.Factory
     {
         private static readonly Dictionary<ActionEnum, Func<ICommand>> mapaComandos = new Dictionary<ActionEnum, Func<ICommand>>
         {
-            { ActionEnum.OptionA, () => new CommandOptionA() },
+            { ActionEnum.AnswerQuestion, () => new CommandOptionA() },
             { ActionEnum.OptionB, () => new CommandOptionB() },
         };
         public static ICommand GetCommand(ActionEnum action)
