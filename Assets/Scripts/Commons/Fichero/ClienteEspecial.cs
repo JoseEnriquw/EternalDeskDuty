@@ -9,13 +9,20 @@ public class ClienteEspecial : MonoBehaviour
     [SerializeField] private GameObject specialPanel;
     [SerializeField] private GameObject background;
     [SerializeField] private bool callLisen;
+    Leonard_Coffe _lisencall;
     void Start()
     {
-        // Player = FindObjectOfType<Player>();
+        _lisencall = FindObjectOfType<Leonard_Coffe>();
+    }
+     public void SetCallLisen(bool lisen)
+    {
+        callLisen=lisen;
     }
 
     public void OnButtonClick()
     {
+        callLisen=_lisencall._ClienteEspecial;
+
         if (callLisen)   // Verifica el estado del booleano en GameManager
         {            
             specialPanel.SetActive(true);

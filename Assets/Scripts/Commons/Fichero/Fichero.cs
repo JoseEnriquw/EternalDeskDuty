@@ -41,4 +41,13 @@ public class Fichero : MonoBehaviour
         }
 
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        string tag = other.tag;
+        if (tag == "Player")
+        {
+            UIManager.Instance.HidePanel(UIPanelTypeEnum.Indications);
+        }
+    }
 }

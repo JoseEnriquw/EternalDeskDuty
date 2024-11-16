@@ -1,8 +1,13 @@
+using Assets.Scripts.Commons;
 using Assets.Scripts.Commons.Constants;
+using Assets.Scripts.Commons.Enums;
+using Assets.Scripts.Commons.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public enum LeonardStatesEnum { Walking, Siting, Drinking , Idle, isTyping }
 public class Leonard_Coffe : MonoBehaviour
@@ -20,11 +25,18 @@ public class Leonard_Coffe : MonoBehaviour
     [SerializeField] private bool isLoop = true;   
     [SerializeField] private bool GotoBathroom =false;
     [SerializeField] private float waitTime = 60f;
+    private bool Entry = false;
+
+    [Header("Audios")]
     [SerializeField] private AudioClip callsound;
-    private AudioSource audioSource;
+    [SerializeField] private AudioClip goodmorning;
+    [SerializeField] private AudioClip thereiscoffee;
+    [SerializeField] private AudioClip thereisNOcoffee;
+
+
+    private AudioSource callSource, goodmorningsource, thereiscoffeesource, thereisNOcoffeesource;
 
     private Transform sitPoint;
-
     [Header("Sit Position")]
     public Transform sitPosition;
 
@@ -32,6 +44,9 @@ public class Leonard_Coffe : MonoBehaviour
     private float movingDifference;   
     Animator animator;
     Rigidbody rb;
+    CallZone callzone;
+    public bool _ClienteEspecial = false;
+
     [SerializeField] private LeonardStatesEnum currentState;
     private bool routineStarted = false;
     void Start()
@@ -39,11 +54,17 @@ public class Leonard_Coffe : MonoBehaviour
         wayPointIndex = 0;        
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = callsound;
+        callzone = FindObjectOfType<CallZone>();        
+
+        callSource = GetComponents<AudioSource>()[0];   
+        goodmorningsource = GetComponents<AudioSource>()[1];
+        thereiscoffeesource = GetComponents<AudioSource>()[2];
+        thereisNOcoffeesource = GetComponents<AudioSource>()[3];
+
         previousPosition = new Vector3(rb.transform.position.x, 0.0f, rb.transform.position.z);
         currentState = LeonardStatesEnum.Idle;
         StartCoroutine(StartRoutineAfterDelay());
+        
     }
     private IEnumerator StartRoutineAfterDelay()
     {
@@ -57,6 +78,12 @@ public class Leonard_Coffe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (waitTime <= CustomTimer.Instance.GetTimer() && !Entry)
+        {
+            Entry = true;
+            currentState = LeonardStatesEnum.Walking;
+        }
+
         switch (currentState)
         {
             case LeonardStatesEnum.Walking:
@@ -174,16 +201,31 @@ public class Leonard_Coffe : MonoBehaviour
             case Tags.Llamado:
                 handleCall(otherObject);
                 break;
+            case Tags.GoodMorning:
+                handleGoodMorning(otherObject);
+                break;
             default:
                 break;
         }
         
 
     }
+
+    private void handleGoodMorning(GameObject otherObject)
+    {
+        Debug.Log("should say good morning here...");
+        goodmorningsource.PlayOneShot(goodmorning);
+        UIManager.Instance.ShowPanelIndicationsAnAddIndications("Leonard: 'Good Morning!'");
+        Invoke("HideUI", 2.0f);
+    }
+
     private void handleCafetera(GameObject otherObject)
     {
         if (otherObject.GetComponent<Cafetera>().HasCoffee)
         {
+            thereiscoffeesource.PlayOneShot(thereiscoffee);
+            UIManager.Instance.ShowPanelIndicationsAnAddIndications("Leonard: 'Thank God! There is Coffee!'");
+            Invoke("HideUI", 2.0f);
             currentState = LeonardStatesEnum.Drinking;
             movingDifference = 0.0f;
             GotoBathroom = true;
@@ -191,6 +233,12 @@ public class Leonard_Coffe : MonoBehaviour
             wayPointIndex++;
             Invoke("IsWaiting", 7.0f);
             Debug.Log("should wait here...");
+        }
+        else
+        {
+            thereisNOcoffeesource.PlayOneShot(thereisNOcoffee);
+            UIManager.Instance.ShowPanelIndicationsAnAddIndications("Leonard: 'Always the same here! The first to get in has to do the coffee Brian! '");
+            Invoke("HideUI", 2.0f);
         }
     }
 
@@ -206,10 +254,21 @@ public class Leonard_Coffe : MonoBehaviour
     {
         Debug.Log("should talk to the phone here...");
         currentState = LeonardStatesEnum.Idle;
-        audioSource.Play();
+        if (callzone.isPlayerInZone)
+        {
+            callSource.PlayOneShot(callsound);
+            UIManager.Instance.ShowPanelIndicationsAnAddIndications("Leonard: 'Hi!, yes... yess... I promise I will delivery the rest by tomorrow! I'm so sorry Mr Jiménez. Please dont tell my boss!'");
+            Invoke("HideUI", 10.0f);
+            _ClienteEspecial = true;
+        }
+        
         GotoBathroom = false;
-        Invoke("IsWaiting", 7.0f);
+        Invoke("IsWaiting", 10.0f);
         Debug.Log("should wait here...");
+    }
+    public void HideUI()
+    {
+        UIManager.Instance.HidePanel(UIPanelTypeEnum.Indications);
     }
     public void IsWaiting()
     {      

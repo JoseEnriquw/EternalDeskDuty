@@ -77,7 +77,8 @@ namespace Assets.Scripts.Commons.UI
             if (panels.TryGetValue(typePanel, out GameObject panelToShow))
             {
                 panelToShow.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.lockState = CursorLockMode.Locked; 
+                GameManager.GameManager.GetGameManager().SetEnablePlayerInput(true);
             }
             else
             {
@@ -104,10 +105,9 @@ namespace Assets.Scripts.Commons.UI
         }
 
         public void ShowPanelFicheros()
-        {
-            if (player == null) player = FindFirstObjectByType<StarterAssetsInputs>();
+        {           
             Cursor.lockState = CursorLockMode.None;
-            player.DisableInput();
+            GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);            
             ShowPanel(UIPanelTypeEnum.Fichero);
            
         }
