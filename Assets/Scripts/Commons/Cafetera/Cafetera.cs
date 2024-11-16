@@ -29,7 +29,7 @@ public class Cafetera : MonoBehaviour, IObserverConsequence
             UIManager.Instance.ShowPanelIndicationsAnAddIndications("Presione \"E\" para interactuar!");
             if (Input.GetKeyDown(KeyCode.E))
             {
-                UIManager.Instance.ShowPanelQuestionsAnswersAndAsignQuestionsAnswers("Make coffee?", "Yes", "No");
+                UIManager.Instance.ShowPanelQuestionsAnswersAndAsignQuestionsAnswers("Make coffee?", "Yes", "No", ActionEnum.AnswerQuestion, ActionEnum.OptionB);
                 interacted = true;
             }
         }
