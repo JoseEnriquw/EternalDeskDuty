@@ -107,8 +107,9 @@ namespace Assets.Scripts.Commons.UI
 
         public void ShowPanelFicheros()
         {
+            if (player == null) player = FindFirstObjectByType<StarterAssetsInputs>();
             Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            player.DisableInput();
             ShowPanel(UIPanelTypeEnum.Fichero);
            
         }
