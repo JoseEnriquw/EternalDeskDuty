@@ -14982,8 +14982,8 @@ Transform:
   m_GameObject: {fileID: 1455263999}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.753, y: 1.07, z: -1.851}
-  m_LocalScale: {x: 1, y: 2.4125, z: 1.502}
+  m_LocalPosition: {x: -9.335, y: 1.07, z: -4.876}
+  m_LocalScale: {x: 2.0261, y: 2.4125, z: 3.951977}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1652310387}
@@ -15002,7 +15002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myConversation: {fileID: 1455264004}
-  waitSecondsRestart: 180
+  waitSecondsRestart: 2
 --- !u!114 &1455264004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15015,27 +15015,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentIDCounter: 20
-  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-558,\"yPos\":-122},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"No,
-    solo quer\xEDa verificar si necesitas algo.\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":9},{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-76,\"yPos\":-70},\"ID\":2,\"ParamActions\":[{\"__type\":\"EditableSetBoolParamAction:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"Value\":false}],\"TMPFontGUID\":null,\"Text\":\"Lo
-    es. Necesito discutir algo urgente.\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-737,\"yPos\":177},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"S\xED,
-    jefe. Lo tendr\xE9 listo enseguida.\",\"parentUIDs\":[4],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-500,\"yPos\":175},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Entiendo.
-    Me pondr\xE9 a ello de inmediato\",\"parentUIDs\":[4],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":15}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-197,\"yPos\":219},\"ID\":11,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Eh...
-    traje el informe que pidi\xF3. Pens\xE9 que era mejor entregarlo de inmediato.\\r\",\"parentUIDs\":[9],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":13}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":34,\"yPos\":233},\"ID\":12,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"\xBFViste
-    el partido anoche? \xA1Un golazo! Estuvo tremendo.\",\"parentUIDs\":[9],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":15}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":23,\"yPos\":439},\"ID\":14,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"entregar
-    informe\",\"parentUIDs\":[13],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":18}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":345,\"yPos\":230},\"ID\":16,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Escuch\xE9
-    algo interesante sobre lo que pas\xF3 con Marta de contabilidad...\",\"parentUIDs\":[10],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":19}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":579,\"yPos\":232},\"ID\":17,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Estaba
-    pensando en tomar unos d\xEDas libres para descansar.\",\"parentUIDs\":[10],\"SpeechUID\":-1}],\"Parameters\":[{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"BoolValue\":false}],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":1},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":2}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":-447,\"yPos\":-223},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Estoy
-    ocupado. Esto m\xE1s vale que sea importante.\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-639,\"yPos\":-38},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ya
-    sabes qu\xE9 necesito. Y no es m\xE1s tiempo perdido.\",\"parentUIDs\":[1],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":11},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":12}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-148,\"yPos\":94},\"ID\":9,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Entonces,
-    \xBFqu\xE9 es tan importante que no pod\xEDa esperar?\",\"parentUIDs\":[2],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":16},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":17}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":479,\"yPos\":88},\"ID\":10,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Entonces,
-    \xBFqu\xE9 es tan importante que no pod\xEDa esperar?\",\"parentUIDs\":[2],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":14}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":30,\"yPos\":323},\"ID\":13,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"\xA1S\xED,
-    c\xF3mo no! Ese gol fue una locura.\",\"parentUIDs\":[12],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-136,\"yPos\":520},\"ID\":15,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"\xA1Bien
+  CurrentIDCounter: 21
+  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-615,\"yPos\":-173},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"No,
+    solo quer\xEDa verificar si necesitas algo.\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":9},{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-133,\"yPos\":-121},\"ID\":2,\"ParamActions\":[{\"__type\":\"EditableSetBoolParamAction:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"Value\":false}],\"TMPFontGUID\":null,\"Text\":\"Lo
+    es. Necesito discutir algo urgente.\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-794,\"yPos\":126},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"S\xED,
+    jefe. Lo tendr\xE9 listo enseguida.\",\"parentUIDs\":[4],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-557,\"yPos\":124},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Entiendo.
+    Me pondr\xE9 a ello de inmediato\",\"parentUIDs\":[4],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":15}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-254,\"yPos\":168},\"ID\":11,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Eh...
+    traje el informe que pidi\xF3. Pens\xE9 que era mejor entregarlo de inmediato.\\r\",\"parentUIDs\":[9],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":13}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-23,\"yPos\":182},\"ID\":12,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"\xBFViste
+    el partido anoche? \xA1Un golazo! Estuvo tremendo.\",\"parentUIDs\":[9],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":15}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-34,\"yPos\":388},\"ID\":14,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"entregar
+    informe\",\"parentUIDs\":[13],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":18}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":288,\"yPos\":179},\"ID\":16,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Escuch\xE9
+    algo interesante sobre lo que pas\xF3 con Marta de contabilidad...\",\"parentUIDs\":[10],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":19}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":522,\"yPos\":181},\"ID\":17,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Estaba
+    pensando en tomar unos d\xEDas libres para descansar.\",\"parentUIDs\":[10],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":426,\"yPos\":437},\"ID\":20,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Lo
+    siento\",\"parentUIDs\":[18,19],\"SpeechUID\":-1}],\"Parameters\":[{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"BoolValue\":false}],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":1},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":2}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":-504,\"yPos\":-274},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Estoy
+    ocupado. Esto m\xE1s vale que sea importante.\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-696,\"yPos\":-89},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ya
+    sabes qu\xE9 necesito. Y no es m\xE1s tiempo perdido.\",\"parentUIDs\":[1],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":11},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":12}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-205,\"yPos\":43},\"ID\":9,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Entonces,
+    \xBFqu\xE9 es tan importante que no pod\xEDa esperar?\",\"parentUIDs\":[2],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":16},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":17}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":422,\"yPos\":37},\"ID\":10,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Entonces,
+    \xBFqu\xE9 es tan importante que no pod\xEDa esperar?\",\"parentUIDs\":[2],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":14}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-27,\"yPos\":272},\"ID\":13,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"\xA1S\xED,
+    c\xF3mo no! Ese gol fue una locura.\",\"parentUIDs\":[12],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-193,\"yPos\":469},\"ID\":15,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"\xA1Bien
     hecho! Te felicito, esto es justo lo que necesitaba. Ahora, escucha bien\u2026
     vas a recibir una llamada m\xE1s tarde, de la gente de la empresa X. Es crucial,
     pero algo no huele bien.  Lo que est\xE1 en juego es m\xE1s grande de lo que
-    parece. Todo lo que necesitas esta en la oficina\",\"parentUIDs\":[11,14],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":352,\"yPos\":335},\"ID\":18,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"\xBFVienes
-    aqu\xED para hablar de chismes? Te pagar\xE9 por resultados, no por rumores.\",\"parentUIDs\":[16],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":633,\"yPos\":340},\"ID\":19,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"\xBFD\xEDas
+    parece. Todo lo que necesitas esta en la oficina\",\"parentUIDs\":[11,14],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":20}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":295,\"yPos\":284},\"ID\":18,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"\xBFVienes
+    aqu\xED para hablar de chismes? Te pagar\xE9 por resultados, no por rumores.\",\"parentUIDs\":[16],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":20}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":576,\"yPos\":289},\"ID\":19,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"\xBFD\xEDas
     libres? \xBFEs esto lo que consideras 'importante'? Espero que tengas tu trabajo
     terminado primero.\",\"parentUIDs\":[17],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
   saveVersion: 110
@@ -15060,6 +15061,7 @@ MonoBehaviour:
   - {fileID: 1652310395}
   - {fileID: 1652310394}
   - {fileID: 1652310393}
+  - {fileID: 1652310404}
   ContinueFont: {fileID: 0}
   EndConversationFont: {fileID: 0}
   Event:
@@ -18016,6 +18018,7 @@ GameObject:
   - component: {fileID: 1652310395}
   - component: {fileID: 1652310394}
   - component: {fileID: 1652310393}
+  - component: {fileID: 1652310404}
   m_Layer: 0
   m_Name: ConversationEventInfo
   m_TagString: Untagged
@@ -18166,19 +18169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1455264003}
-        m_TargetAssemblyTypeName: ConversationStarterJefe, Assembly-CSharp
-        m_MethodName: ReiniciarEscena
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   NodeID: 19
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
@@ -18197,19 +18188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1455264003}
-        m_TargetAssemblyTypeName: ConversationStarterJefe, Assembly-CSharp
-        m_MethodName: ReiniciarEscena
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   NodeID: 18
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
@@ -18382,6 +18361,37 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   NodeID: 9
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1652310404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652310385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1455264003}
+        m_TargetAssemblyTypeName: ConversationStarterJefe, Assembly-CSharp
+        m_MethodName: ReiniciarEscena
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NodeID: 20
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
   Audio: {fileID: 0}
