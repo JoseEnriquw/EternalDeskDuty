@@ -6,9 +6,10 @@ namespace Assets.Scripts.Commons.Observers
 {
     public class ObserverConsequence : MonoBehaviour, IObserverConsequence
     {
+        [SerializeField] private Material material; 
         private void Start()
         {
-            GameManager.GameManager.GetGameManager().GetDecisionsManager().SubscribeObserver(this); ;
+            GameManager.GameManager.GetGameManager().GetDecisionsManager().SubscribeObserver(this);
         }
 
         public void UpdateConsequence(ConsequenceEnum consecuencia)
@@ -16,11 +17,12 @@ namespace Assets.Scripts.Commons.Observers
             switch (consecuencia)
             {
                 case ConsequenceEnum.ConsequenceA:
-                    gameObject.transform.position += Vector3.right;
+                    material.color=Color.blue;
                     Debug.Log("Consecuencia A");
                     break;
                 case ConsequenceEnum.ConsequenceB:
-                    gameObject.transform.position += Vector3.left;
+                    
+                    material.color = Color.red;
                     Debug.Log("Consecuencia B");
                     break;
                 default:
