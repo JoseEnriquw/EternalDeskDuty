@@ -53,6 +53,8 @@ namespace Assets.Scripts.Commons.GameManager
         public void SetEnablePlayerInput(bool enable)
         {
             OnChangePlayerInput?.Invoke(enable);
+            if(enable) Cursor.lockState = CursorLockMode.Locked;
+            else Cursor.lockState = CursorLockMode.None;
         }
         IEnumerator EjecutarConDelay(float seconds, Action action)
         {
