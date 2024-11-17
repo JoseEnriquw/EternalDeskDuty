@@ -10,9 +10,11 @@ namespace Assets.Scripts.Commons.GameManager
         private static GameManager gameManager;
         public static GameManager GetGameManager() => gameManager;
         private DecisionsManager decisionsManager;
-
+        private int restartCount;
         public Action<bool> OnChangePlayerInput;
-
+        public Action<Transform> OnChangePlayerPosition;
+        
+        
         private void Awake()
         {
             if (gameManager != null)
@@ -22,6 +24,7 @@ namespace Assets.Scripts.Commons.GameManager
             }
             decisionsManager = new();
             gameManager = this;
+            restartCount = 0;
             DontDestroyOnLoad(this);
         }
         public void NextScene()
@@ -32,7 +35,13 @@ namespace Assets.Scripts.Commons.GameManager
         {
             StartCoroutine(EjecutarConDelay(seconds, () => { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }));
             CustomTimer.Instance.ResetTimer();
-            
+            restartCount++;
+            Debug.Log("Restart number:"+restartCount);
+        }
+
+        public int GetRestartCount()
+        {
+            return restartCount;
         }
 
         public void GoToScene(int scene)
@@ -53,6 +62,8 @@ namespace Assets.Scripts.Commons.GameManager
         public void SetEnablePlayerInput(bool enable)
         {
             OnChangePlayerInput?.Invoke(enable);
+            if(enable) Cursor.lockState = CursorLockMode.Locked;
+            else Cursor.lockState = CursorLockMode.None;
         }
         IEnumerator EjecutarConDelay(float seconds, Action action)
         {
@@ -61,6 +72,11 @@ namespace Assets.Scripts.Commons.GameManager
             // Código que se ejecuta después del delay
             Debug.Log($"Han pasado {seconds} segundos");
             action?.Invoke();
+        }
+
+        public void ChagePlayerPosition(Transform transform)
+        {
+            OnChangePlayerPosition?.Invoke(transform);
         }
     }
 }

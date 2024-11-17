@@ -182,9 +182,7 @@ public class Lousse : MonoBehaviour
     {
         currentState = LousseStatesEnum.Idle;
         GameManager.GetGameManager().SetEnablePlayerInput(false);
-        Cursor.lockState = CursorLockMode.None;
-        ConversationManager.Instance.StartConversation(myConversation);
-        
+        ConversationManager.Instance.StartConversation(myConversation);        
     }
 
    

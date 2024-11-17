@@ -1,6 +1,4 @@
-﻿using Assets.Scripts.Character;
-using Assets.Scripts.Commons.Enums;
-using StarterAssets;
+﻿using Assets.Scripts.Commons.Enums;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -12,6 +10,7 @@ namespace Assets.Scripts.Commons.UI
     {
         private static UIManager instance;
         public static UIManager Instance => instance;
+        private UIPanelTypeEnum? currentPanel=null;
 
         // Panel de Indicaciones
         [Header("Panel de Indicaciones")]
@@ -69,18 +68,34 @@ namespace Assets.Scripts.Commons.UI
 
         public void ShowPanel(UIPanelTypeEnum typePanel)
         {
-            foreach (var panel in panels.Values)
+            if (typePanel == UIPanelTypeEnum.Indications)
             {
-                panel.SetActive(false);
-            }
-
-            if (panels.TryGetValue(typePanel, out GameObject panelToShow))
-            {
-                panelToShow.SetActive(true);
+                if (currentPanel == UIPanelTypeEnum.Interactive || currentPanel== UIPanelTypeEnum.Indications)
+                {
+                    if (!panelIndications.activeSelf)
+                    {
+                        panelIndications.SetActive(true);
+                    }
+                }
             }
             else
             {
-                Debug.LogError($"El panel {typePanel} no se encontró en el diccionario de paneles.");
+                var isValid = panels.TryGetValue(currentPanel.GetValueOrDefault(), out GameObject panelToHide);
+                var isCurrentPanel = currentPanel == typePanel;
+                if (!isValid || !isCurrentPanel || !panelToHide.activeSelf)
+                {
+                    if(!isCurrentPanel && isValid) panelToHide.SetActive(false);
+
+                    if (panels.TryGetValue(typePanel, out GameObject panelToShow))
+                    {
+                        panelToShow.SetActive(true);
+                        currentPanel=typePanel;
+                    }
+                    else
+                    {
+                        Debug.LogError($"El panel {typePanel} no se encontró en el diccionario de paneles.");
+                    }
+                }
             }
         }
 
@@ -89,8 +104,6 @@ namespace Assets.Scripts.Commons.UI
             if (panels.TryGetValue(typePanel, out GameObject panelToShow))
             {
                 panelToShow.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked; 
-                GameManager.GameManager.GetGameManager().SetEnablePlayerInput(true);
             }
             else
             {
@@ -101,16 +114,12 @@ namespace Assets.Scripts.Commons.UI
         // Métodos específicos opcionales
         public void ShowPanelIndicationsAnAddIndications(string text)
         {
-            if (!panelQuestionsAnswers.activeSelf) 
-            {
-                ShowPanel(UIPanelTypeEnum.Indications);
-                AsignTextIndications(text);
-            }
+            ShowPanel(UIPanelTypeEnum.Indications);
+            AsignTextIndications(text);
         }
 
         public void ShowPanelQuestionsAnswersAndAsignQuestionsAnswers(string question, string answerA, string answerB, ActionEnum actionA, ActionEnum actionB)
         {
-            Cursor.lockState = CursorLockMode.None;
             GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
             ShowPanel(UIPanelTypeEnum.QuestionsAnswers);
 
@@ -120,14 +129,12 @@ namespace Assets.Scripts.Commons.UI
 
         public void ShowPanelFicheros()
         {           
-            Cursor.lockState = CursorLockMode.None;
             GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);            
             ShowPanel(UIPanelTypeEnum.Fichero);
            
         }
         public void ShowPanelComputer()
         {
-            Cursor.lockState = CursorLockMode.None;
             GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
             ShowPanel(UIPanelTypeEnum.Computer);
 

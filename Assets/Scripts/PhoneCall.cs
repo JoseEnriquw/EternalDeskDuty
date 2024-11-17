@@ -12,37 +12,48 @@ namespace Assets.Scripts
         [SerializeField] private float waitTime;
         private AudioSource audioSource;
         private bool isCalling;
-        private bool isCalled;
+        private bool answered;
+        private bool inCollision;
 
         private void Start()
         {
             audioSource = GetComponent<AudioSource>();
             isCalling = false;
-            isCalled = false;
+            answered = false;
+            inCollision=false;
         }
 
         private void Update()
         {
-            if (waitTime <= CustomTimer.Instance.GetTimer() && !isCalling)
+            if (waitTime <= CustomTimer.Instance.GetTimer())
             {
-                audioSource.Play();
-                isCalling = true;
-                gameObject.tag=Tags.Interactive;
+                if (!isCalling)
+                {
+                    audioSource.Play();
+                    isCalling = true;
+                }
+                AnsweringPhone();
+            }
+        }
+
+        private void AnsweringPhone()
+        {
+            if (Input.GetKeyDown(KeyCode.E) && inCollision)
+            {
+                answered = true;
+                inCollision = false;
+                audioSource.Stop();
+                UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
+                GameManager.GetGameManager().RestartScene(2f);
             }
         }
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.CompareTag(Tags.Player) && isCalling && !isCalled)
+            if (other.CompareTag(Tags.Player) && isCalling && !answered)
             {
                 UIManager.Instance.ShowPanel(UIPanelTypeEnum.Interactive);
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    isCalled = true;
-                    audioSource.Stop();
-                    UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
-                    GameManager.GetGameManager().RestartScene(2f);
-                }
+                inCollision = true;
             }
 
         }
@@ -52,6 +63,7 @@ namespace Assets.Scripts
             if (other.CompareTag(Tags.Player) && isCalling)
             {
                 UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
+                inCollision = false;
             }
         }
     }

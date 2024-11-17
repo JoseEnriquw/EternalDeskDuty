@@ -45,6 +45,8 @@ namespace Assets.Scripts.Character
         private void Start()
         {
             GameManager.GetGameManager().OnChangePlayerInput+=SetEnablePlayerInput;
+            GameManager.GetGameManager().OnChangePlayerPosition += ChangePosition;
+
             Cursor.lockState = CursorLockMode.Locked;
             //Cursor.visible = false;
         }
@@ -126,7 +128,14 @@ namespace Assets.Scripts.Character
         private void OnDestroy()
         {
             GameManager.GetGameManager().OnChangePlayerInput-=SetEnablePlayerInput;
+            GameManager.GetGameManager().OnChangePlayerPosition-=ChangePosition;
 
+        }
+
+        private void ChangePosition(Transform transform)
+        {
+            gameObject.transform.position = transform.position;
+            gameObject.transform.rotation = transform.rotation;
         }
     }
 }
