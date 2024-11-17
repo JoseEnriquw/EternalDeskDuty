@@ -31,7 +31,7 @@ namespace Assets.Scripts.Commons.GameManager
         public void RestartScene(float seconds)
         {
             StartCoroutine(EjecutarConDelay(seconds, () => { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }));
-            
+            CustomTimer.Instance.ResetTimer();
             
         }
 

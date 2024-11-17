@@ -26,7 +26,7 @@ public class Cafetera : MonoBehaviour, IObserverConsequence
     {
         if (other.gameObject.CompareTag(Tags.Player) && !interacted)
         {
-            UIManager.Instance.ShowPanelIndicationsAnAddIndications("Presione \"E\" para interactuar!");
+            UIManager.Instance.ShowPanel(UIPanelTypeEnum.Interactive);
             if (Input.GetKeyDown(KeyCode.E))
             {
                 UIManager.Instance.ShowPanelQuestionsAnswersAndAsignQuestionsAnswers("Make coffee?", "Yes", "No", ActionEnum.AnswerQuestion, ActionEnum.OptionB);
@@ -40,6 +40,7 @@ public class Cafetera : MonoBehaviour, IObserverConsequence
     {
         if (other.CompareTag("Player"))
         {
+            UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
             Debug.Log("Me aleje de la cafetera");
             
         }
