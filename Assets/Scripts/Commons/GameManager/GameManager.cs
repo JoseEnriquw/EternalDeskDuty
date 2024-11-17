@@ -12,7 +12,9 @@ namespace Assets.Scripts.Commons.GameManager
         private DecisionsManager decisionsManager;
 
         public Action<bool> OnChangePlayerInput;
-
+        public Action<Transform> OnChangePlayerPosition;
+        
+        
         private void Awake()
         {
             if (gameManager != null)
@@ -63,6 +65,11 @@ namespace Assets.Scripts.Commons.GameManager
             // Código que se ejecuta después del delay
             Debug.Log($"Han pasado {seconds} segundos");
             action?.Invoke();
+        }
+
+        public void ChagePlayerPosition(Transform transform)
+        {
+            OnChangePlayerPosition?.Invoke(transform);
         }
     }
 }
