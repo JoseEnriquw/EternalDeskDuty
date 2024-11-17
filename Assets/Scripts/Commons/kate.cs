@@ -29,12 +29,20 @@ public class Kate : MonoBehaviour
     [SerializeField] private float waitTime = 60f;
     private bool favorresponse = false;
     [SerializeField] private NPCConversation myConversation;   
+    private bool firstConversation= false;
+    public bool IknowKateBirthday = false;
+    public bool SaidHappyBirthday = false;
+    public bool Cake =false;
 
     private Vector3 previousPosition;
     private float movingDifference;   
     Animator animator;
     Rigidbody rb;
-  
+
+    private Transform sitPoint;
+    [Header("Sit Position")]
+    public Transform sitPosition;
+
 
     [SerializeField] private KateStatesEnum currentState;
     private bool routineStarted = false;
@@ -163,7 +171,14 @@ public class Kate : MonoBehaviour
         {
             case Tags.Player:
                 handlefirstencounter();
-                break;           
+                break;
+            case Tags.Waiting:
+                currentState = KateStatesEnum.Idle;
+                Invoke("IsWaiting", 10.0f);
+                break;
+            case Tags.Sit:
+                handleDesk(otherObject);
+                break;
             default:
                 break;
         }
@@ -173,14 +188,61 @@ public class Kate : MonoBehaviour
 
     private void handlefirstencounter()
     {
-        currentState = KateStatesEnum.Idle;
-        GameManager.GetGameManager().SetEnablePlayerInput(false);
-        Cursor.lockState = CursorLockMode.None;
-        ConversationManager.Instance.StartConversation(myConversation);
+        if(!firstConversation)
+        {
+            currentState = KateStatesEnum.Idle;
+            GameManager.GetGameManager().SetEnablePlayerInput(false);
+            Cursor.lockState = CursorLockMode.None;
+            ConversationManager.Instance.StartConversation(myConversation);
+            ConversationManager.Instance.SetBool("FirstInteraction", true);            
+            firstConversation =true;
+        }
+        else
+        {
+            currentState = KateStatesEnum.Idle;
+            GameManager.GetGameManager().SetEnablePlayerInput(false);
+            Cursor.lockState = CursorLockMode.None;
+            ConversationManager.Instance.StartConversation(myConversation);
+            ConversationManager.Instance.SetBool("FirstInteraction", false);
+            ConversationManager.Instance.SetBool("BadReaction", !favorresponse);
+            ConversationManager.Instance.SetBool("Birthday", IknowKateBirthday);
+            ConversationManager.Instance.SetBool("birthdaysaluteDone", SaidHappyBirthday);
+            if(Reports.HasPrintMartinezReports || Reports.HasPrintSanchezReport)
+                ConversationManager.Instance.SetBool("Havereports", true);
+            ConversationManager.Instance.SetBool("SanchezReport", Reports.HasPrintSanchezReport);
+            
+
+
+        }
+            
+        
+
+    }
+    private void handleDesk(GameObject otherObject)
+    {
+        Debug.Log("should sit here...");
+        sitPoint = otherObject.transform.Find("sitposition");
+        Sit();
         
     }
+    private void Sit()
+    {
+        if (!isSit)
+        {
 
-   
+            transform.position = sitPoint.position;
+            transform.rotation = sitPoint.rotation;
+            currentState = KateStatesEnum.isTyping;
+            if (rb != null)
+            {
+                rb.isKinematic = true;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No se asignó un Animator al NPC.");
+        }
+    }
     public void HideUI()
     {
         UIManager.Instance.HidePanel(UIPanelTypeEnum.Indications);
@@ -195,4 +257,18 @@ public class Kate : MonoBehaviour
         favorresponse = response;
     }
  
+    public void reademailbirthday(bool read)
+    {
+        IknowKateBirthday = read;
+    }
+
+    public void SaidHP(bool said)
+    {
+        SaidHappyBirthday=said;
+    }
+
+    public void CanEatCake(bool can)
+    {
+        Cake = can;
+    }
 }

@@ -12,13 +12,14 @@ public class Computer : MonoBehaviour
     [Header("Audios")]
     [SerializeField] private AudioClip _print;
     private AudioSource printsource;
-    private bool _PrintSanchezReport =false;
-    private bool _PrintMartinezReports = false;
-    private bool _PrintBossReports = false;
+ 
 
     void Start()
     {
         printsource = GetComponent<AudioSource>();
+        Reports._PrintSanchezReport = false;
+        Reports._PrintMartinezReports = false;
+        Reports._PrintBossReports = false;
     }
 
     // Update is called once per frame
@@ -56,35 +57,19 @@ public class Computer : MonoBehaviour
 
     public void PrintSanchezReport(bool print)
     {
-        _PrintSanchezReport = print;
+        Reports._PrintSanchezReport = print;
     }
 
     public void PrintMartinezReports(bool print)
     {
-        _PrintMartinezReports = print;
+        Reports._PrintMartinezReports = print;
     }
 
     public void PrintBossReports(bool print)
     {
-        _PrintBossReports = print;
+        Reports._PrintBossReports = print;
     }
-
-    public bool Deliveryreport(string name)
-    {
-        switch (name)
-        {
-            case "PrintSanchezReport":
-                return _PrintSanchezReport;
-            case "PrintMartinezReports":
-                return _PrintMartinezReports;
-            case "PrintBossReports":
-                return _PrintBossReports;
-            default: return false;
-                
-        }
-       
-    }
-
+   
     private void OnTriggerExit(Collider other)
     {
         string tag = other.tag;

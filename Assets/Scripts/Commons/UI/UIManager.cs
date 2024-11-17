@@ -28,12 +28,13 @@ namespace Assets.Scripts.Commons.UI
         [SerializeField] private GameObject PanelFichero; 
         
         [Header("Panel Interactive")]
-        [SerializeField] private GameObject PanelInteractive;
-
-        
+        [SerializeField] private GameObject PanelInteractive;        
 
         [Header("Panel Computadora")]
         [SerializeField] private GameObject PanelComputer;
+
+        [Header("Panel Impresora")]
+        [SerializeField] private GameObject PanelPrinter;
 
         private Dictionary<UIPanelTypeEnum, GameObject> panels;
 
@@ -59,7 +60,8 @@ namespace Assets.Scripts.Commons.UI
                 { UIPanelTypeEnum.QuestionsAnswers, panelQuestionsAnswers },
                 { UIPanelTypeEnum.Fichero, PanelFichero },
                 { UIPanelTypeEnum.Interactive, PanelInteractive },               
-                { UIPanelTypeEnum.Computer, PanelComputer }
+                { UIPanelTypeEnum.Computer, PanelComputer },
+                { UIPanelTypeEnum.Printer, PanelPrinter }
             };
 
             
@@ -128,6 +130,13 @@ namespace Assets.Scripts.Commons.UI
             Cursor.lockState = CursorLockMode.None;
             GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
             ShowPanel(UIPanelTypeEnum.Computer);
+
+        }
+        public void ShowPanelPrinter()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
+            ShowPanel(UIPanelTypeEnum.Printer);
 
         }
 
