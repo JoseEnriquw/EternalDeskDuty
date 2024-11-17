@@ -62,20 +62,33 @@ namespace Assets.Scripts.Commons.UI
 
         public void ShowPanel(UIPanelTypeEnum typePanel)
         {
-            var isValid = panels.TryGetValue(currentPanel.GetValueOrDefault(), out GameObject panelToHide);
-            var isCurrentPanel = currentPanel == typePanel;
-            if (!isValid || !isCurrentPanel || !panelToHide.activeSelf)
+            if (typePanel == UIPanelTypeEnum.Indications)
             {
-                if(!isCurrentPanel && isValid) panelToHide.SetActive(true);
-
-                if (panels.TryGetValue(typePanel, out GameObject panelToShow))
+                if (currentPanel == UIPanelTypeEnum.Interactive || currentPanel== UIPanelTypeEnum.Indications)
                 {
-                    panelToShow.SetActive(true);
-                    currentPanel=typePanel;
+                    if (!panelIndications.activeSelf)
+                    {
+                        panelIndications.SetActive(true);
+                    }
                 }
-                else
+            }
+            else
+            {
+                var isValid = panels.TryGetValue(currentPanel.GetValueOrDefault(), out GameObject panelToHide);
+                var isCurrentPanel = currentPanel == typePanel;
+                if (!isValid || !isCurrentPanel || !panelToHide.activeSelf)
                 {
-                    Debug.LogError($"El panel {typePanel} no se encontró en el diccionario de paneles.");
+                    if(!isCurrentPanel && isValid) panelToHide.SetActive(false);
+
+                    if (panels.TryGetValue(typePanel, out GameObject panelToShow))
+                    {
+                        panelToShow.SetActive(true);
+                        currentPanel=typePanel;
+                    }
+                    else
+                    {
+                        Debug.LogError($"El panel {typePanel} no se encontró en el diccionario de paneles.");
+                    }
                 }
             }
         }

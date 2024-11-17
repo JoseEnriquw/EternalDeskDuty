@@ -1,9 +1,7 @@
+using Assets.Scripts.Commons.Constants;
 using Assets.Scripts.Commons.Enums;
 using Assets.Scripts.Commons.GameManager;
 using Assets.Scripts.Commons.UI;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Computer : MonoBehaviour
@@ -26,12 +24,11 @@ public class Computer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        InteractComputer();
     }
     private void OnTriggerStay(Collider other)
     {        
-        string tag = other.tag;
-        if(tag == "Player")
+        if(other.CompareTag(Tags.Player) && !isViewing)
         {
             UIManager.Instance.ShowPanel(UIPanelTypeEnum.Interactive);
             inCollision = true;
@@ -40,7 +37,7 @@ public class Computer : MonoBehaviour
 
     private void InteractComputer()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && inCollision)
         {
             if (isViewing)
             {
@@ -50,6 +47,7 @@ public class Computer : MonoBehaviour
             else
             {
                 UIManager.Instance.ShowPanelComputer();
+                GameManager.GetGameManager().SetEnablePlayerInput(false);
             }
             isViewing = !isViewing;
         }
@@ -77,24 +75,18 @@ public class Computer : MonoBehaviour
 
     public bool Deliveryreport(string name)
     {
-        switch (name)
+        return name switch
         {
-            case "PrintSanchezReport":
-                return _PrintSanchezReport;
-            case "PrintMartinezReports":
-                return _PrintMartinezReports;
-            case "PrintBossReports":
-                return _PrintBossReports;
-            default: return false;
-                
-        }
-       
+            "PrintSanchezReport" => _PrintSanchezReport,
+            "PrintMartinezReports" => _PrintMartinezReports,
+            "PrintBossReports" => _PrintBossReports,
+            _ => false,
+        };
     }
 
     private void OnTriggerExit(Collider other)
     {
-        string tag = other.tag;
-        if (tag == "Player")
+        if (other.CompareTag(Tags.Player))
         {
             UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
             inCollision = false;
