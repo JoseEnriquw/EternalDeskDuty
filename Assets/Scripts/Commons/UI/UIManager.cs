@@ -58,8 +58,7 @@ namespace Assets.Scripts.Commons.UI
                 { UIPanelTypeEnum.Indications, panelIndications },
                 { UIPanelTypeEnum.QuestionsAnswers, panelQuestionsAnswers },
                 { UIPanelTypeEnum.Fichero, PanelFichero },
-                { UIPanelTypeEnum.Interactive, PanelInteractive }
-               
+                { UIPanelTypeEnum.Interactive, PanelInteractive },               
                 { UIPanelTypeEnum.Computer, PanelComputer }
             };
 

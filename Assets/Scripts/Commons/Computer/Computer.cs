@@ -90,7 +90,8 @@ public class Computer : MonoBehaviour
         string tag = other.tag;
         if (tag == "Player")
         {
-            UIManager.Instance.HidePanel(UIPanelTypeEnum.Indications);
+            UIManager.Instance.HidePanel(UIPanelTypeEnum.Computer);
+            isViewing = false;
         }
     }
 }
