@@ -23,6 +23,7 @@ TagManager:
   - button f1
   - button f6
   - GoodMorning
+  - Computer
   layers:
   - Default
   - TransparentFX

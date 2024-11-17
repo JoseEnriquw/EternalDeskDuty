@@ -6,5 +6,6 @@ namespace Assets.Scripts.Commons.Enums
         Indications=1,
         QuestionsAnswers=2,
         Fichero=3, 
+        Computer=4
     }
 }

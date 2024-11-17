@@ -27,6 +27,9 @@ namespace Assets.Scripts.Commons.UI
         [Header("Panel Fichero")]
         [SerializeField] private GameObject PanelFichero;
 
+        [Header("Panel Computadora")]
+        [SerializeField] private GameObject PanelComputer;
+
         private Dictionary<UIPanelTypeEnum, GameObject> panels;
 
         private void Awake()
@@ -49,7 +52,8 @@ namespace Assets.Scripts.Commons.UI
             {
                 { UIPanelTypeEnum.Indications, panelIndications },
                 { UIPanelTypeEnum.QuestionsAnswers, panelQuestionsAnswers },
-                { UIPanelTypeEnum.Fichero, PanelFichero }
+                { UIPanelTypeEnum.Fichero, PanelFichero },
+                { UIPanelTypeEnum.Computer, PanelComputer }
             };
 
             
@@ -112,6 +116,13 @@ namespace Assets.Scripts.Commons.UI
             GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);            
             ShowPanel(UIPanelTypeEnum.Fichero);
            
+        }
+        public void ShowPanelComputer()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
+            ShowPanel(UIPanelTypeEnum.Computer);
+
         }
 
         public void AsignTextIndications(string text)
