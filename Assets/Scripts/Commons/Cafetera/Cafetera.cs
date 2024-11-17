@@ -11,6 +11,7 @@ public class Cafetera : MonoBehaviour, IObserverConsequence
 {
     public bool HasCoffee;
     [SerializeField] private bool interacted= false;
+    private bool inCollision=false;
     void Start()
     {
         GameManager.GetGameManager().GetDecisionsManager().SubscribeObserver(this);
@@ -19,7 +20,7 @@ public class Cafetera : MonoBehaviour, IObserverConsequence
     // Update is called once per frame
     void Update()
     {
-        
+        MakeCoffee();
     }
 
     private void OnTriggerStay(Collider other)
@@ -27,22 +28,26 @@ public class Cafetera : MonoBehaviour, IObserverConsequence
         if (other.gameObject.CompareTag(Tags.Player) && !interacted)
         {
             UIManager.Instance.ShowPanel(UIPanelTypeEnum.Interactive);
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                UIManager.Instance.ShowPanelQuestionsAnswersAndAsignQuestionsAnswers("Make coffee?", "Yes", "No", ActionEnum.AnswerQuestion, ActionEnum.OptionB);
-                interacted = true;
-            }
+            inCollision = true;
         }
+    }
 
+    private void MakeCoffee()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && inCollision && !interacted)
+        {
+            UIManager.Instance.ShowPanelQuestionsAnswersAndAsignQuestionsAnswers("Make coffee?", "Yes", "No", ActionEnum.AnswerQuestion, ActionEnum.OptionB);
+            interacted = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(Tags.Player))
         {
             UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
-            Debug.Log("Me aleje de la cafetera");
-            
+            inCollision = false;
+            Debug.Log("Me aleje de la cafetera");            
         }
     }
 
