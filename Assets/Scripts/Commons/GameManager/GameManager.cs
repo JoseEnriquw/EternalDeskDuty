@@ -10,7 +10,7 @@ namespace Assets.Scripts.Commons.GameManager
         private static GameManager gameManager;
         public static GameManager GetGameManager() => gameManager;
         private DecisionsManager decisionsManager;
-
+        private int restartCount;
         public Action<bool> OnChangePlayerInput;
 
         private void Awake()
@@ -22,6 +22,7 @@ namespace Assets.Scripts.Commons.GameManager
             }
             decisionsManager = new();
             gameManager = this;
+            restartCount = 0;
             DontDestroyOnLoad(this);
         }
         public void NextScene()
@@ -32,7 +33,13 @@ namespace Assets.Scripts.Commons.GameManager
         {
             StartCoroutine(EjecutarConDelay(seconds, () => { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }));
             CustomTimer.Instance.ResetTimer();
-            
+            restartCount++;
+            Debug.Log("Restart number:"+restartCount);
+        }
+
+        public int GetRestartCount()
+        {
+            return restartCount;
         }
 
         public void GoToScene(int scene)
