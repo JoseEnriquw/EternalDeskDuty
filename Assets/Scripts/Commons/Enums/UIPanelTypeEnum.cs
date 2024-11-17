@@ -5,7 +5,7 @@ namespace Assets.Scripts.Commons.Enums
     {
         Indications=1,
         QuestionsAnswers=2,
-        Fichero=3, 
-        Computer=4
+        Fichero=3,        Interactive=4,        
+        Computer=5
     }
 }

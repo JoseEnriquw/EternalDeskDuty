@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Commons;
 using Assets.Scripts.Commons.Constants;
+using Assets.Scripts.Commons.Enums;
 using Assets.Scripts.Commons.GameManager;
 using Assets.Scripts.Commons.UI;
 using UnityEngine;
@@ -26,6 +27,7 @@ namespace Assets.Scripts
             {
                 audioSource.Play();
                 isCalling = true;
+                gameObject.tag=Tags.Interactive;
             }
         }
 
@@ -33,13 +35,12 @@ namespace Assets.Scripts
         {
             if (other.CompareTag(Tags.Player) && isCalling && !isCalled)
             {
-                UIManager.Instance.ShowPanelIndicationsAnAddIndications("Presione 'E' para interactuar");
+                UIManager.Instance.ShowPanel(UIPanelTypeEnum.Interactive);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     isCalled = true;
                     audioSource.Stop();
-                    UIManager.Instance.HidePanel(Commons.Enums.UIPanelTypeEnum.Indications);
-                    CustomTimer.Instance.ResetTimer();
+                    UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
                     GameManager.GetGameManager().RestartScene(2f);
                 }
             }
@@ -50,7 +51,7 @@ namespace Assets.Scripts
         {
             if (other.CompareTag(Tags.Player) && isCalling)
             {
-                UIManager.Instance.HidePanel(Commons.Enums.UIPanelTypeEnum.Indications);
+                UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
             }
         }
     }
