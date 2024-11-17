@@ -10,6 +10,7 @@ namespace Assets.Scripts.Commons.Constants
         public const string Waiting = "Waiting";
         public const string Llamado = "Llamado";
         public const string Sit = "Sit";
-        public const string ObjetoPickeable = "ObjetoPickeable";
+        public const string Interactive = "Interactive";
+        public const string GoodMorning = "GoodMorning";
     }
 }

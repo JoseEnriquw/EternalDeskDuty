@@ -9,8 +9,21 @@ TagManager:
   - Llamado
   - Sit
   - Cafetera
+  - waiting
+  - Sit
+  - Llamado
+  - Fichero
   - Npc
   - Waiting
+  - door
+  - button f4
+  - button f5
+  - button f3
+  - button f2
+  - button f1
+  - button f6
+  - GoodMorning
+  - Interactive
   layers:
   - Default
   - TransparentFX
