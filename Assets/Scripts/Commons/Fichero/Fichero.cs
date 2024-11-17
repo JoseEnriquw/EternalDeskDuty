@@ -24,7 +24,7 @@ public class Fichero : MonoBehaviour
         string tag = other.tag;
         if(tag == "Player" && !isViewing)
         {
-            UIManager.Instance.ShowPanelIndicationsAnAddIndications("Presiona E para Interactuar");
+            UIManager.Instance.ShowPanel(UIPanelTypeEnum.Interactive);
             if(Input.GetKeyDown(KeyCode.E))
             {
                 isViewing = true;   
@@ -47,7 +47,7 @@ public class Fichero : MonoBehaviour
         string tag = other.tag;
         if (tag == "Player")
         {
-            UIManager.Instance.HidePanel(UIPanelTypeEnum.Indications);
+            UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
         }
     }
 }

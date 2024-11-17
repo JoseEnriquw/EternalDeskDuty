@@ -25,7 +25,10 @@ namespace Assets.Scripts.Commons.UI
         [SerializeField] private Button buttonAnswerA, buttonAnswerB;
 
         [Header("Panel Fichero")]
-        [SerializeField] private GameObject PanelFichero;
+        [SerializeField] private GameObject PanelFichero; 
+        
+        [Header("Panel Interactive")]
+        [SerializeField] private GameObject PanelInteractive;
 
         private Dictionary<UIPanelTypeEnum, GameObject> panels;
 
@@ -49,7 +52,8 @@ namespace Assets.Scripts.Commons.UI
             {
                 { UIPanelTypeEnum.Indications, panelIndications },
                 { UIPanelTypeEnum.QuestionsAnswers, panelQuestionsAnswers },
-                { UIPanelTypeEnum.Fichero, PanelFichero }
+                { UIPanelTypeEnum.Fichero, PanelFichero },
+                { UIPanelTypeEnum.Interactive, PanelInteractive }
             };
 
             

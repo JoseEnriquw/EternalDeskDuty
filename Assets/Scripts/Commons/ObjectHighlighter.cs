@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Character
 {
-    public class PickableHighlighter : MonoBehaviour
+    public class ObjectHighlighter : MonoBehaviour
     {
         public float rayDistance = 5f; // Distancia máxima del raycast
         public Color outlineColor = Color.yellow;
@@ -21,7 +21,7 @@ namespace Assets.Scripts.Character
             {
                 GameObject hitObject = hit.collider.gameObject;
 
-                if (hitObject.CompareTag(Tags.ObjetoPickeable)) 
+                if (hitObject.CompareTag(Tags.Interactive)) 
                 {
                     // Si es un nuevo objeto, actualiza el resaltado
                     if (currentObject != hitObject)
