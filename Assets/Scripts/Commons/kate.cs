@@ -175,9 +175,7 @@ public class Kate : MonoBehaviour
     {
         currentState = KateStatesEnum.Idle;
         GameManager.GetGameManager().SetEnablePlayerInput(false);
-        Cursor.lockState = CursorLockMode.None;
         ConversationManager.Instance.StartConversation(myConversation);
-        
     }
 
    

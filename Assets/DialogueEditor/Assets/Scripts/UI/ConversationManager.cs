@@ -163,7 +163,6 @@ namespace DialogueEditor
                 OnConversationEnded.Invoke();
 
             GameManager.GetGameManager().SetEnablePlayerInput(true);
-
         }
 
         public void SelectNextOption()

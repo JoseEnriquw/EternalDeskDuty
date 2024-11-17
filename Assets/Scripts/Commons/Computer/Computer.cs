@@ -1,4 +1,5 @@
 using Assets.Scripts.Commons.Enums;
+using Assets.Scripts.Commons.GameManager;
 using Assets.Scripts.Commons.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using UnityEngine;
 public class Computer : MonoBehaviour
 {
     private bool isViewing =false;
+    private bool inCollision =false;
 
     [Header("Audios")]
     [SerializeField] private AudioClip _print;
@@ -29,24 +31,28 @@ public class Computer : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {        
         string tag = other.tag;
-        if(tag == "Player" && !isViewing)
+        if(tag == "Player")
         {
-            UIManager.Instance.ShowPanelIndicationsAnAddIndications("Presiona E para Interactuar");
-            if(Input.GetKeyDown(KeyCode.E))
+            UIManager.Instance.ShowPanel(UIPanelTypeEnum.Interactive);
+            inCollision = true;
+        }
+    }
+
+    private void InteractComputer()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (isViewing)
             {
-                isViewing = true;   
+                UIManager.Instance.HidePanel(UIPanelTypeEnum.Computer);
+                GameManager.GetGameManager().SetEnablePlayerInput(true);
+            }
+            else
+            {
                 UIManager.Instance.ShowPanelComputer();
             }
+            isViewing = !isViewing;
         }
-        else if(tag == "Player" && isViewing)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                isViewing = false;
-                UIManager.Instance.HidePanel(UIPanelTypeEnum.Fichero);
-            }
-        }
-
     }
 
     public void PrintSound()
@@ -90,8 +96,8 @@ public class Computer : MonoBehaviour
         string tag = other.tag;
         if (tag == "Player")
         {
-            UIManager.Instance.HidePanel(UIPanelTypeEnum.Computer);
-            isViewing = false;
+            UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
+            inCollision = false;
         }
     }
 }
