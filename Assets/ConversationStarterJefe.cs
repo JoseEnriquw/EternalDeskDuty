@@ -1,7 +1,5 @@
 using Assets.Scripts.Commons.GameManager;
 using DialogueEditor;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ConversationStarterJefe : MonoBehaviour
@@ -14,16 +12,12 @@ public class ConversationStarterJefe : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameManager.GetGameManager().SetEnablePlayerInput(false);
-            Cursor.lockState = CursorLockMode.None;
             ConversationManager.Instance.StartConversation(myConversation);
-
-           // GameManager.GetGameManager().SetEnablePlayerInput(true);
         }
     }
 
     public void ReiniciarEscena()
-    {
-        
+    {        
         GameManager.GetGameManager().RestartScene(waitSecondsRestart);
     }
     
