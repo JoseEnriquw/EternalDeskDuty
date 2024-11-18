@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Commons.Enums;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,6 +33,9 @@ namespace Assets.Scripts.Commons.UI
         [Header("Panel Computadora")]
         [SerializeField] private GameObject PanelComputer;
 
+        [Header("Panel Impresora")]
+        [SerializeField] private GameObject PanelPrinter;
+
         private Dictionary<UIPanelTypeEnum, GameObject> panels;
 
         private void Awake()
@@ -56,15 +60,20 @@ namespace Assets.Scripts.Commons.UI
                 { UIPanelTypeEnum.QuestionsAnswers, panelQuestionsAnswers },
                 { UIPanelTypeEnum.Fichero, PanelFichero },
                 { UIPanelTypeEnum.Interactive, PanelInteractive },               
-                { UIPanelTypeEnum.Computer, PanelComputer }
-            };            
+                { UIPanelTypeEnum.Computer, PanelComputer },
+                { UIPanelTypeEnum.Printer, PanelPrinter }
+            };
+
+            
         }
 
         public void ShowPanel(UIPanelTypeEnum typePanel)
         {
             if (typePanel == UIPanelTypeEnum.Indications)
             {
-                if (currentPanel == UIPanelTypeEnum.Interactive || currentPanel== UIPanelTypeEnum.Indications)
+                bool otherPanelsActive = panels.Any(x=> x.Key != UIPanelTypeEnum.Interactive && x.Key != UIPanelTypeEnum.Interactive && x.Value.activeSelf);
+
+                if (currentPanel == UIPanelTypeEnum.Interactive || currentPanel== UIPanelTypeEnum.Indications || !otherPanelsActive)
                 {
                     if (!panelIndications.activeSelf)
                     {
@@ -131,6 +140,13 @@ namespace Assets.Scripts.Commons.UI
         {
             GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
             ShowPanel(UIPanelTypeEnum.Computer);
+
+        }
+        public void ShowPanelPrinter()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
+            ShowPanel(UIPanelTypeEnum.Printer);
 
         }
 
