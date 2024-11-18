@@ -9,7 +9,7 @@ using UnityEngine;
 public class ComputerBoss : MonoBehaviour
 {
     private string input;
-    private string codigo = "015340255698";
+    private string codigo = "015344769";
     [SerializeField] GameObject PantalaPass;
     [SerializeField] GameObject PantallaCompu;
     private static ComputerBoss instance;
