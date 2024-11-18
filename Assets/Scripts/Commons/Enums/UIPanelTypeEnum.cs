@@ -8,6 +8,7 @@ namespace Assets.Scripts.Commons.Enums
         Fichero=3,      
         Interactive=4,        
         Computer=5,
-        Printer=6
+        Printer=6,
+        Fridge=7,  
     }
 }
