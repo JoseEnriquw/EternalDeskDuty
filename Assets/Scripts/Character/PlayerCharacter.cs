@@ -19,7 +19,7 @@ namespace Assets.Scripts.Character
         private CinemachineVirtualCamera firstPersonCamera;
 
         private Vector3 moveDirection = Vector3.zero;
-        private float gravity = -9.81f;
+        private readonly float gravity = -9.81f;
         private float verticalVelocity;
         private float xRotation = 0f;
 
@@ -30,13 +30,13 @@ namespace Assets.Scripts.Character
 
         private void Awake()
         {
-            // Obtener componentes necesarios
+            // Get necessary components
             characterController = GetComponent<CharacterController>();
             animator = GetComponent<Animator>();
             firstPersonCamera = GetComponentInChildren<CinemachineVirtualCamera>();
             playerInput = GetComponent<PlayerInput>();
 
-            // Obtener acciones del Input System
+            // Get Input System actions
             moveAction = playerInput.actions["Move"];
             lookAction = playerInput.actions["Look"];
             runAction = playerInput.actions["Run"];
@@ -44,11 +44,11 @@ namespace Assets.Scripts.Character
 
         private void Start()
         {
-            GameManager.GetGameManager().OnChangePlayerInput+=SetEnablePlayerInput;
+            GameManager.GetGameManager().OnChangePlayerInput += SetEnablePlayerInput;
             GameManager.GetGameManager().OnChangePlayerPosition += ChangePosition;
+            GameManager.GetGameManager().OnChangePlayerRotation += SetLookAtTarget;
 
             Cursor.lockState = CursorLockMode.Locked;
-            //Cursor.visible = false;
         }
 
         private void Update()
@@ -60,13 +60,15 @@ namespace Assets.Scripts.Character
 
         private void HandleMouseLook()
         {
-            // Obtener la entrada del ratón
+            if (!playerInput.enabled) return;
+
+            // Get mouse input
             Vector2 lookInput = lookAction.ReadValue<Vector2>() * mouseSensitivity * Time.deltaTime;
 
-            // Rotar el jugador en el eje Y (horizontal)
+            // Rotate the player horizontally
             transform.Rotate(Vector3.up * lookInput.x);
 
-            // Rotar la cámara en el eje X (vertical)
+            // Rotate the camera vertically
             xRotation -= lookInput.y;
             xRotation = Mathf.Clamp(xRotation, -80f, 60f);
 
@@ -75,14 +77,16 @@ namespace Assets.Scripts.Character
 
         private void HandleMovement()
         {
-            // Obtener entrada de movimiento y estado de correr
+            if (!playerInput.enabled) return;
+
+            // Get movement input and run state
             Vector2 moveInput = moveAction.ReadValue<Vector2>();
             bool isRunning = runAction.ReadValue<float>() > 0.1f;
 
-            // Determinar velocidad actual
+            // Determine current speed
             float currentSpeed = isRunning ? runSpeed : walkSpeed;
 
-            // Dirección de movimiento en relación con la orientación actual
+            // Movement direction relative to current orientation
             Vector3 direction = new Vector3(moveInput.x, 0, moveInput.y).normalized;
 
             if (direction.magnitude >= 0.1f)
@@ -95,7 +99,7 @@ namespace Assets.Scripts.Character
                 moveDirection = Vector3.zero;
             }
 
-            // Aplicar gravedad
+            // Apply gravity
             if (characterController.isGrounded)
             {
                 verticalVelocity = -0.5f;
@@ -107,17 +111,17 @@ namespace Assets.Scripts.Character
 
             moveDirection.y = verticalVelocity;
 
-            // Mover al personaje
+            // Move the character
             characterController.Move(moveDirection * Time.deltaTime);
         }
 
         private void HandleAnimations()
         {
-            // Calcular la velocidad horizontal
-            Vector3 horizontalVelocity = new(characterController.velocity.x, 0, characterController.velocity.z);
+            // Calculate horizontal speed
+            Vector3 horizontalVelocity = new Vector3(characterController.velocity.x, 0, characterController.velocity.z);
             float speedPercent = horizontalVelocity.magnitude / runSpeed;
 
-            // Actualizar el parámetro 'Speed' en el Animator
+            // Update 'Speed' parameter in Animator
             animator.SetFloat("Speed", speedPercent, 0.1f, Time.deltaTime);
         }
 
@@ -125,17 +129,40 @@ namespace Assets.Scripts.Character
         {
             playerInput.enabled = enable;
         }
-        private void OnDestroy()
-        {
-            GameManager.GetGameManager().OnChangePlayerInput-=SetEnablePlayerInput;
-            GameManager.GetGameManager().OnChangePlayerPosition-=ChangePosition;
 
+        public void SetLookAtTarget(Transform target)
+        {
+            RotateTowardsTarget(target);
         }
 
-        private void ChangePosition(Transform transform)
+        private void RotateTowardsTarget(Transform target)
         {
-            gameObject.transform.position = transform.position;
-            gameObject.transform.rotation = transform.rotation;
+            // Calculate the direction to the target
+            Vector3 directionToTarget = target.position - transform.position;
+
+            // Rotate the player horizontally to face the target
+            Vector3 horizontalDirection = new Vector3(directionToTarget.x, 0, directionToTarget.z).normalized;
+            if (horizontalDirection.sqrMagnitude > 0.001f)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(horizontalDirection);
+                transform.rotation = targetRotation;
+            }
+
+            // Apply the rotation to the camera
+            firstPersonCamera.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+        }
+
+        private void OnDestroy()
+        {
+            GameManager.GetGameManager().OnChangePlayerInput -= SetEnablePlayerInput;
+            GameManager.GetGameManager().OnChangePlayerPosition -= ChangePosition;
+            GameManager.GetGameManager().OnChangePlayerRotation -= SetLookAtTarget;
+        }
+
+        private void ChangePosition(Transform newTransform)
+        {
+            transform.position = newTransform.position;
+            transform.rotation = newTransform.rotation;
         }
     }
 }

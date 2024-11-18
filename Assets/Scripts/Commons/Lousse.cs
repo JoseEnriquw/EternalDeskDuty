@@ -182,7 +182,8 @@ public class Lousse : MonoBehaviour
     {
         currentState = LousseStatesEnum.Idle;
         GameManager.GetGameManager().SetEnablePlayerInput(false);
-        ConversationManager.Instance.StartConversation(myConversation);        
+        ConversationManager.Instance.StartConversation(myConversation);
+        GameManager.GetGameManager().ChagePlayerRotation(gameObject.transform);
     }
 
    

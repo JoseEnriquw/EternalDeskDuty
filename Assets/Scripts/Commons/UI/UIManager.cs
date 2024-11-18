@@ -11,7 +11,7 @@ namespace Assets.Scripts.Commons.UI
     {
         private static UIManager instance;
         public static UIManager Instance => instance;
-        private UIPanelTypeEnum? currentPanel=null;
+        private UIPanelTypeEnum? currentPanel = null;
 
         // Panel de Indicaciones
         [Header("Panel de Indicaciones")]
@@ -21,22 +21,26 @@ namespace Assets.Scripts.Commons.UI
         // Panel de Preguntas y Respuestas
         [Header("Panel de Preguntas y Respuestas")]
         [SerializeField] private GameObject panelQuestionsAnswers;
-        [SerializeField] private TextMeshProUGUI txtQuestion,txtAnswerA,txtAnswerB;
+        [SerializeField] private TextMeshProUGUI txtQuestion, txtAnswerA, txtAnswerB;
         [SerializeField] private Button buttonAnswerA, buttonAnswerB;
 
         [Header("Panel Fichero")]
-        [SerializeField] private GameObject PanelFichero; 
-        
+        [SerializeField] private GameObject PanelFichero;
         [Header("Panel Interactive")]
-        [SerializeField] private GameObject PanelInteractive;        
-
+        [SerializeField] private GameObject PanelInteractive;
         [Header("Panel Computadora")]
         [SerializeField] private GameObject PanelComputer;
-
         [Header("Panel Impresora")]
         [SerializeField] private GameObject PanelPrinter;
+        [Header("Panel Fridge")]
+        [SerializeField] private GameObject PanelFridge;
+        [Header("Panel Board")]
+        [SerializeField] private GameObject PanelBoard;
+        [Header("Panel ComputerBoss")]
+        [SerializeField] private GameObject PanelComputerBoss;
 
         private Dictionary<UIPanelTypeEnum, GameObject> panels;
+        private bool panelsLocked = false;
 
         private void Awake()
         {
@@ -61,10 +65,29 @@ namespace Assets.Scripts.Commons.UI
                 { UIPanelTypeEnum.Fichero, PanelFichero },
                 { UIPanelTypeEnum.Interactive, PanelInteractive },               
                 { UIPanelTypeEnum.Computer, PanelComputer },
-                { UIPanelTypeEnum.Printer, PanelPrinter }
+                { UIPanelTypeEnum.Printer, PanelPrinter },
+                { UIPanelTypeEnum.Fridge, PanelFridge },
+                { UIPanelTypeEnum.Board, PanelBoard },
+                 { UIPanelTypeEnum.ComputerBoss,PanelComputerBoss },
             };
+            GameManager.GameManager.GetGameManager().OnPanelLockStateChanged += SetPanelLockState;
+        }
 
-            
+        private void SetPanelLockState(bool locked)
+        {
+            panelsLocked = locked;
+
+            if (panelsLocked)
+            {
+                // Hide all panels except Indications and Interactive
+                foreach (var panelEntry in panels)
+                {
+                    if (panelEntry.Key != UIPanelTypeEnum.Indications && panelEntry.Key != UIPanelTypeEnum.Interactive)
+                    {
+                        panelEntry.Value.SetActive(false);
+                    }
+                }
+            }
         }
 
         public void ShowPanel(UIPanelTypeEnum typePanel)
@@ -83,6 +106,7 @@ namespace Assets.Scripts.Commons.UI
             }
             else
             {
+                if(panelsLocked) return;
                 var isValid = panels.TryGetValue(currentPanel.GetValueOrDefault(), out GameObject panelToHide);
                 var isCurrentPanel = currentPanel == typePanel;
                 if (!isValid || !isCurrentPanel || !panelToHide.activeSelf)
@@ -140,6 +164,25 @@ namespace Assets.Scripts.Commons.UI
         {
             GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
             ShowPanel(UIPanelTypeEnum.Computer);
+
+        }
+        public void ShowPanelFridge()
+        {
+            GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
+            ShowPanel(UIPanelTypeEnum.Fridge);
+
+        }
+        
+        public void ShowPanelComputerBoss()
+        {
+            GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
+            ShowPanel(UIPanelTypeEnum.ComputerBoss);
+
+        }
+        public void ShowPanelBoard()
+        {
+            GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
+            ShowPanel(UIPanelTypeEnum.Board);
 
         }
         public void ShowPanelPrinter()
