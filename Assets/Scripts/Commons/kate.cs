@@ -228,9 +228,8 @@ public class Kate : MonoBehaviour
 
 
         }
-            
-        
 
+        GameManager.GetGameManager().ChagePlayerRotation(gameObject.transform);
     }
     private void handleDesk(GameObject otherObject)
     {
