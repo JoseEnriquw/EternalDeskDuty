@@ -210,13 +210,9 @@ public class Kate : MonoBehaviour
             if(Reports.HasPrintMartinezReports || Reports.HasPrintSanchezReport)
                 ConversationManager.Instance.SetBool("Havereports", true);
             ConversationManager.Instance.SetBool("SanchezReport", Reports.HasPrintSanchezReport);
-            
-
-
         }
-            
-        
 
+        GameManager.GetGameManager().ChagePlayerRotation(gameObject.transform);
     }
     private void handleDesk(GameObject otherObject)
     {

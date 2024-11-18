@@ -13,8 +13,9 @@ namespace Assets.Scripts.Commons.GameManager
         private int restartCount;
         public Action<bool> OnChangePlayerInput;
         public Action<Transform> OnChangePlayerPosition;
-        
-        
+        public Action<Transform> OnChangePlayerRotation;
+        public Action<bool> OnPanelLockStateChanged;
+
         private void Awake()
         {
             if (gameManager != null)
@@ -77,6 +78,22 @@ namespace Assets.Scripts.Commons.GameManager
         public void ChagePlayerPosition(Transform transform)
         {
             OnChangePlayerPosition?.Invoke(transform);
+        }   
+        public void ChagePlayerRotation(Transform transform)
+        {
+            OnChangePlayerRotation?.Invoke(transform);
+        }
+
+        // Method to lock panels
+        public void LockPanels()
+        {
+            OnPanelLockStateChanged?.Invoke(true);
+        }
+
+        // Method to unlock panels
+        public void UnlockPanels()
+        {
+            OnPanelLockStateChanged?.Invoke(false);
         }
     }
 }
