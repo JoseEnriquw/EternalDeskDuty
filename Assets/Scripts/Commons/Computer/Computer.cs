@@ -12,7 +12,23 @@ public class Computer : MonoBehaviour
     [Header("Audios")]
     [SerializeField] private AudioClip _print;
     private AudioSource printsource;
- 
+    private static Computer instance;
+    public static Computer Instance => instance;
+    private void Awake()
+    {
+        // Singleton Pattern
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        if (transform.parent != null)
+        {
+            transform.SetParent(null);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
