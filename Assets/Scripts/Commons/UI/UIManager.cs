@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Commons.Enums;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -70,7 +71,9 @@ namespace Assets.Scripts.Commons.UI
         {
             if (typePanel == UIPanelTypeEnum.Indications)
             {
-                if (currentPanel == UIPanelTypeEnum.Interactive || currentPanel== UIPanelTypeEnum.Indications)
+                bool otherPanelsActive = panels.Any(x=> x.Key != UIPanelTypeEnum.Interactive && x.Key != UIPanelTypeEnum.Interactive && x.Value.activeSelf);
+
+                if (currentPanel == UIPanelTypeEnum.Interactive || currentPanel== UIPanelTypeEnum.Indications || !otherPanelsActive)
                 {
                     if (!panelIndications.activeSelf)
                     {
