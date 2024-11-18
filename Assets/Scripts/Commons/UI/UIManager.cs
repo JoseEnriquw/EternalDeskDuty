@@ -40,6 +40,7 @@ namespace Assets.Scripts.Commons.UI
         [SerializeField] private GameObject PanelComputerBoss;
 
         private Dictionary<UIPanelTypeEnum, GameObject> panels;
+        private bool panelsLocked = false;
 
         private void Awake()
         {
@@ -69,8 +70,24 @@ namespace Assets.Scripts.Commons.UI
                 { UIPanelTypeEnum.Board, PanelBoard },
                  { UIPanelTypeEnum.ComputerBoss,PanelComputerBoss },
             };
+            GameManager.GameManager.GetGameManager().OnPanelLockStateChanged += SetPanelLockState;
+        }
 
-            
+        private void SetPanelLockState(bool locked)
+        {
+            panelsLocked = locked;
+
+            if (panelsLocked)
+            {
+                // Hide all panels except Indications and Interactive
+                foreach (var panelEntry in panels)
+                {
+                    if (panelEntry.Key != UIPanelTypeEnum.Indications && panelEntry.Key != UIPanelTypeEnum.Interactive)
+                    {
+                        panelEntry.Value.SetActive(false);
+                    }
+                }
+            }
         }
 
         public void ShowPanel(UIPanelTypeEnum typePanel)
@@ -89,6 +106,7 @@ namespace Assets.Scripts.Commons.UI
             }
             else
             {
+                if(panelsLocked) return;
                 var isValid = panels.TryGetValue(currentPanel.GetValueOrDefault(), out GameObject panelToHide);
                 var isCurrentPanel = currentPanel == typePanel;
                 if (!isValid || !isCurrentPanel || !panelToHide.activeSelf)
