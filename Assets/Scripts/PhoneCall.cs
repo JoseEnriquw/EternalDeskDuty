@@ -3,6 +3,7 @@ using Assets.Scripts.Commons.Constants;
 using Assets.Scripts.Commons.Enums;
 using Assets.Scripts.Commons.GameManager;
 using Assets.Scripts.Commons.UI;
+using DialogueEditor;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -10,6 +11,8 @@ namespace Assets.Scripts
     public class PhoneCall : MonoBehaviour
     {
         [SerializeField] private float waitTime;
+        [SerializeField] private float waitTimeToRestart;
+        [SerializeField] private NPCConversation myConversation;
         private AudioSource audioSource;
         private bool isCalling;
         private bool answered;
@@ -31,6 +34,7 @@ namespace Assets.Scripts
                 {
                     audioSource.Play();
                     isCalling = true;
+                    GameManager.GetGameManager().LockPanels();
                 }
                 AnsweringPhone();
             }
@@ -44,7 +48,8 @@ namespace Assets.Scripts
                 inCollision = false;
                 audioSource.Stop();
                 UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
-                GameManager.GetGameManager().RestartScene(2f);
+                GameManager.GetGameManager().SetEnablePlayerInput(false);
+                ConversationManager.Instance.StartConversation(myConversation);
             }
         }
 
@@ -65,6 +70,11 @@ namespace Assets.Scripts
                 UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
                 inCollision = false;
             }
+        }
+
+        public void RestartScene()
+        {
+            GameManager.GetGameManager().RestartScene(waitTimeToRestart);
         }
     }
 }

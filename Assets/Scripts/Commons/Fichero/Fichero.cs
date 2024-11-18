@@ -8,10 +8,11 @@ public class Fichero : MonoBehaviour
 {
     private bool isViewing =false;
     private bool inCollision =false;
+    private bool isPanelsLocked =false;
 
     void Start()
     {
-        
+        GameManager.GetGameManager().OnPanelLockStateChanged += PanelsLocked;
     }
 
     // Update is called once per frame
@@ -24,7 +25,7 @@ public class Fichero : MonoBehaviour
     {        
         if(other.CompareTag(Tags.Player))
         {
-            if(!isViewing)UIManager.Instance.ShowPanel(UIPanelTypeEnum.Interactive);
+            if(!isViewing && !isPanelsLocked)UIManager.Instance.ShowPanel(UIPanelTypeEnum.Interactive);
             inCollision = true;
         }
 
@@ -41,7 +42,7 @@ public class Fichero : MonoBehaviour
 
     private void InteractFichero()
     {
-        if (Input.GetKeyDown(KeyCode.E) && inCollision)
+        if (Input.GetKeyDown(KeyCode.E) && inCollision && !isPanelsLocked)
         {
             if (isViewing)
             {
@@ -55,5 +56,15 @@ public class Fichero : MonoBehaviour
             }
             isViewing = !isViewing;
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.GetGameManager().OnPanelLockStateChanged -= PanelsLocked;
+    }
+
+    private void PanelsLocked(bool isPanelsLocked)
+    {
+        this.isPanelsLocked = isPanelsLocked;
     }
 }
