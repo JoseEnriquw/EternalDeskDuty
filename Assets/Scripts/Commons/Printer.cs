@@ -14,6 +14,24 @@ public class Printer : MonoBehaviour
    [SerializeField] private GameObject ButtonMartinez;
     [SerializeField] private GameObject ButtonSanchez;
     [SerializeField] private GameObject ButtonBoss;
+    private static Printer instance;
+    public static Printer Instance => instance;
+    private void Awake()
+    {
+        // Singleton Pattern
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        if (transform.parent != null)
+        {
+            transform.SetParent(null);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
         _computer = FindObjectOfType<Computer>();
