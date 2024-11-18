@@ -7,6 +7,7 @@ using DialogueEditor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.EventSystems.EventTrigger;
@@ -33,6 +34,8 @@ public class Kate : MonoBehaviour
     public bool IknowKateBirthday = false;
     public bool SaidHappyBirthday = false;
     public bool Cake =false;
+    private bool inLoop = false;
+    private int Morethan1;
 
     private Vector3 previousPosition;
     private float movingDifference;   
@@ -118,7 +121,7 @@ public class Kate : MonoBehaviour
         animator.SetBool(nameof(isIdle), false);
         animator.SetBool(nameof(isTyping), false);
         isWalking = false;
-        isSit = false;
+       // isSit = false;
         isDrinkingCoffe = false;
         isIdle = false;
         isTyping = false;
@@ -188,13 +191,21 @@ public class Kate : MonoBehaviour
 
     private void handlefirstencounter()
     {
-        if(!firstConversation)
+        if (GameManager.GetGameManager().GetRestartCount() > 0)
+            inLoop = true;
+
+        if (GameManager.GetGameManager().GetRestartCount() > 3)
+            Morethan1 = GameManager.GetGameManager().GetRestartCount();
+
+        if (!firstConversation)
         {
             currentState = KateStatesEnum.Idle;
             GameManager.GetGameManager().SetEnablePlayerInput(false);
             Cursor.lockState = CursorLockMode.None;
             ConversationManager.Instance.StartConversation(myConversation);
-            ConversationManager.Instance.SetBool("FirstInteraction", true);            
+            ConversationManager.Instance.SetBool("FirstInteraction", true);
+            ConversationManager.Instance.SetBool("inLoop", inLoop);
+            ConversationManager.Instance.SetInt("Morethan1", Morethan1);
             firstConversation =true;
         }
         else
@@ -210,7 +221,10 @@ public class Kate : MonoBehaviour
             if(Reports.HasPrintMartinezReports || Reports.HasPrintSanchezReport)
                 ConversationManager.Instance.SetBool("Havereports", true);
             ConversationManager.Instance.SetBool("SanchezReport", Reports.HasPrintSanchezReport);
-            
+            ConversationManager.Instance.SetBool("MartinezReport", Reports.HasPrintMartinezReports);
+            ConversationManager.Instance.SetBool("deliveryreport", Reports.DeliverySanchezReport);
+            ConversationManager.Instance.SetBool("inLoop", inLoop);
+            ConversationManager.Instance.SetInt("Morethan1", Morethan1);
 
 
         }
@@ -237,6 +251,7 @@ public class Kate : MonoBehaviour
             {
                 rb.isKinematic = true;
             }
+            isSit = true;
         }
         else
         {
@@ -248,8 +263,9 @@ public class Kate : MonoBehaviour
         UIManager.Instance.HidePanel(UIPanelTypeEnum.Indications);
     }
     public void IsWaiting()
-    {      
-        currentState = KateStatesEnum.Walking;
+    {   
+        if(!isSit)
+            currentState = KateStatesEnum.Walking;
     }
 
     public void FavorResponse(bool response)
@@ -271,4 +287,10 @@ public class Kate : MonoBehaviour
     {
         Cake = can;
     }
+
+    public void deliverSanchesreport(bool deliver)
+    {
+        Reports.DeliverySanchezReport = deliver;
+    }
+   
 }

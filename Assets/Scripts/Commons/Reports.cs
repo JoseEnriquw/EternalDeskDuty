@@ -10,8 +10,12 @@ public static class Reports
     public static bool _PrintBossReports { get; set; }
 
     //si los agarro de la impresora 
-
     public static bool HasPrintSanchezReport { get; set; }
     public static bool HasPrintMartinezReports { get; set; }
     public static bool HasPrintBossReports { get; set; }
+
+    //si los entrgo 
+    public static bool DeliverySanchezReport { get; set; }
+    public static bool DeliveryMartinezReports { get; set; }
+    public static bool DeliveryBossReports { get; set; }
 }
