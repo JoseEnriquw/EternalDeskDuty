@@ -34,6 +34,8 @@ namespace Assets.Scripts.Commons.UI
         [SerializeField] private GameObject PanelPrinter;
         [Header("Panel Fridge")]
         [SerializeField] private GameObject PanelFridge;
+        [Header("Panel Board")]
+        [SerializeField] private GameObject PanelBoard;
 
         private Dictionary<UIPanelTypeEnum, GameObject> panels;
 
@@ -61,7 +63,8 @@ namespace Assets.Scripts.Commons.UI
                 { UIPanelTypeEnum.Interactive, PanelInteractive },               
                 { UIPanelTypeEnum.Computer, PanelComputer },
                 { UIPanelTypeEnum.Printer, PanelPrinter },
-                { UIPanelTypeEnum.Fridge, PanelFridge }
+                { UIPanelTypeEnum.Fridge, PanelFridge },
+                { UIPanelTypeEnum.Board, PanelBoard }
             };
 
             
@@ -146,6 +149,12 @@ namespace Assets.Scripts.Commons.UI
         {
             GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
             ShowPanel(UIPanelTypeEnum.Fridge);
+
+        }
+        public void ShowPanelBoard()
+        {
+            GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
+            ShowPanel(UIPanelTypeEnum.Board);
 
         }
         public void ShowPanelPrinter()
