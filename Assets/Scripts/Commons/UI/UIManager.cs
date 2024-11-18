@@ -11,7 +11,7 @@ namespace Assets.Scripts.Commons.UI
     {
         private static UIManager instance;
         public static UIManager Instance => instance;
-        private UIPanelTypeEnum? currentPanel=null;
+        private UIPanelTypeEnum? currentPanel = null;
 
         // Panel de Indicaciones
         [Header("Panel de Indicaciones")]
@@ -21,13 +21,13 @@ namespace Assets.Scripts.Commons.UI
         // Panel de Preguntas y Respuestas
         [Header("Panel de Preguntas y Respuestas")]
         [SerializeField] private GameObject panelQuestionsAnswers;
-        [SerializeField] private TextMeshProUGUI txtQuestion,txtAnswerA,txtAnswerB;
+        [SerializeField] private TextMeshProUGUI txtQuestion, txtAnswerA, txtAnswerB;
         [SerializeField] private Button buttonAnswerA, buttonAnswerB;
 
         [Header("Panel Fichero")]
-        [SerializeField] private GameObject PanelFichero;         
+        [SerializeField] private GameObject PanelFichero;
         [Header("Panel Interactive")]
-        [SerializeField] private GameObject PanelInteractive;  
+        [SerializeField] private GameObject PanelInteractive;
         [Header("Panel Computadora")]
         [SerializeField] private GameObject PanelComputer;
         [Header("Panel Impresora")]
@@ -36,6 +36,8 @@ namespace Assets.Scripts.Commons.UI
         [SerializeField] private GameObject PanelFridge;
         [Header("Panel Board")]
         [SerializeField] private GameObject PanelBoard;
+        [Header("Panel ComputerBoss")]
+        [SerializeField] private GameObject PanelComputerBoss;
 
         private Dictionary<UIPanelTypeEnum, GameObject> panels;
 
@@ -64,7 +66,8 @@ namespace Assets.Scripts.Commons.UI
                 { UIPanelTypeEnum.Computer, PanelComputer },
                 { UIPanelTypeEnum.Printer, PanelPrinter },
                 { UIPanelTypeEnum.Fridge, PanelFridge },
-                { UIPanelTypeEnum.Board, PanelBoard }
+                { UIPanelTypeEnum.Board, PanelBoard },
+                 { UIPanelTypeEnum.ComputerBoss,PanelComputerBoss },
             };
 
             
@@ -149,6 +152,13 @@ namespace Assets.Scripts.Commons.UI
         {
             GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
             ShowPanel(UIPanelTypeEnum.Fridge);
+
+        }
+        
+        public void ShowPanelComputerBoss()
+        {
+            GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
+            ShowPanel(UIPanelTypeEnum.ComputerBoss);
 
         }
         public void ShowPanelBoard()

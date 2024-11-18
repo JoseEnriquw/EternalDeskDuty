@@ -6,14 +6,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeeBoard : MonoBehaviour
+public class ComputerBoss : MonoBehaviour
 {
+    private string input;
+    private string codigo = "015340255698";
+    [SerializeField] GameObject PantalaPass;
+    [SerializeField] GameObject PantallaCompu;
+    private static ComputerBoss instance;
     private bool isViewing = false;
     private bool inCollision = false;
-    [SerializeField] private List<GameObject> panels;
-    int _scene = 0;
-    private static SeeBoard instance;
-    public static SeeBoard Instance => instance;
+    public static ComputerBoss Instance => instance;
     private void Awake()
     {
         // Singleton Pattern
@@ -30,9 +32,10 @@ public class SeeBoard : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
+
     void Update()
     {
-        InteractBoard();
+        InteractComputerBoss();
     }
     private void OnTriggerStay(Collider other)
     {
@@ -43,26 +46,19 @@ public class SeeBoard : MonoBehaviour
         }
     }
 
-    private void InteractBoard()
+    private void InteractComputerBoss()
     {
         if (Input.GetKeyDown(KeyCode.E) && inCollision)
         {
             if (isViewing)
             {
 
-                UIManager.Instance.HidePanel(UIPanelTypeEnum.Board);
+                UIManager.Instance.HidePanel(UIPanelTypeEnum.ComputerBoss);
                 GameManager.GetGameManager().SetEnablePlayerInput(true);
             }
             else
-            {
-                foreach (var panel in panels)
-                {
-                    panel.SetActive(false);
-                }
-
-                int indexToActivate = _scene % panels.Count;
-                panels[indexToActivate].SetActive(true);
-                UIManager.Instance.ShowPanelBoard();
+            {               
+                UIManager.Instance.ShowPanelComputerBoss();
                 GameManager.GetGameManager().SetEnablePlayerInput(false);
             }
             isViewing = !isViewing;
@@ -78,4 +74,23 @@ public class SeeBoard : MonoBehaviour
         }
     }
 
+
+    public void ReadPass(string pass)
+    {
+        input = pass;
+        Debug.Log(input);
+    }
+
+    public void Ingresar()
+    {
+        if(input == codigo)
+        {
+            PantalaPass.SetActive(false);
+            PantallaCompu.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("reinicio el loop");
+        }
+    }
 }

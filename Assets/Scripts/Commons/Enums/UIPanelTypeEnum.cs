@@ -10,6 +10,7 @@ namespace Assets.Scripts.Commons.Enums
         Computer=5,
         Printer=6,
         Fridge=7,  
-        Board=8
+        Board=8,
+        ComputerBoss=9,
     }
 }
