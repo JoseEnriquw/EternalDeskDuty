@@ -1,17 +1,20 @@
 using Assets.Scripts.Commons.Constants;
+using Assets.Scripts.Commons.Enums;
+using Assets.Scripts.Commons.GameManager;
+using Assets.Scripts.Commons.UI;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public enum jefeStatesEnum { Walking, Siting, Drinking , Idle, isTyping }
+public enum jefeStatesEnum { Walking, Siting, Drinking , Idle, isTyping , Talking}
 public class Jefe : MonoBehaviour
 {
     
     [SerializeField] private List<Transform> wayPoints = new List<Transform>();
     [SerializeField] private bool isWalking;
-    [SerializeField] private bool isSit =false;
-    [SerializeField] private bool isDrinkingCoffe;
+    public bool isSit =true;
+    [SerializeField] private bool isTalking;
     [SerializeField] private bool isIdle;
     [SerializeField] private bool isTyping;
     [SerializeField] private int wayPointIndex;
@@ -20,8 +23,7 @@ public class Jefe : MonoBehaviour
     [SerializeField] private bool isLoop = true;   
     [SerializeField] private bool GotoBathroom =false;
     [SerializeField] private float waitTime = 60f;
-    [SerializeField] private AudioClip callsound;
-    private AudioSource audioSource;
+    public bool BossisGone = false;
 
     private Transform sitPoint;
 
@@ -32,17 +34,19 @@ public class Jefe : MonoBehaviour
     private float movingDifference;   
     Animator animator;
     Rigidbody rb;
-    [SerializeField] private LeonardStatesEnum currentState;
+    [SerializeField] private jefeStatesEnum currentState;
     private bool routineStarted = false;
+    ComputerBoss _ComputerBoss;
     void Start()
-    {       
+    {
+        _ComputerBoss = FindObjectOfType<ComputerBoss>();
+        
         wayPointIndex = 0;        
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = callsound;
+       
         previousPosition = new Vector3(rb.transform.position.x, 0.0f, rb.transform.position.z);
-        currentState = LeonardStatesEnum.Idle;
+        currentState = jefeStatesEnum.Siting;
         StartCoroutine(StartRoutineAfterDelay());
     }
     private IEnumerator StartRoutineAfterDelay()
@@ -52,14 +56,15 @@ public class Jefe : MonoBehaviour
 
         // Una vez que termina la espera, comienza la rutina
         routineStarted = true;
-        currentState = LeonardStatesEnum.Walking;
+        currentState = jefeStatesEnum.Siting;
     }
     // Update is called once per frame
     void Update()
     {
         switch (currentState)
         {
-            case LeonardStatesEnum.Walking:
+            case jefeStatesEnum.Walking:
+                BossisGone = true;
                 WaypointMovement();
                 if (!animator.GetBool(nameof(isWalking)))
                 {
@@ -68,39 +73,44 @@ public class Jefe : MonoBehaviour
                    
                 }                    
                 break;
-            case LeonardStatesEnum.Siting:
+            case jefeStatesEnum.Siting:
+                BossisGone=false;
                 if (!animator.GetBool(nameof(isSit)))
                 {
                     CleanAnimationState();
+                    isSit = true;
                     animator.SetBool(nameof(isSit), true);
                 }
                 
                 break;
-            case LeonardStatesEnum.Drinking:
-                if (!animator.GetBool(nameof(isDrinkingCoffe)))
+            case jefeStatesEnum.Talking:
+                BossisGone = true;
+                if (!animator.GetBool(nameof(isTalking)))
                 {
                     CleanAnimationState();
-                    animator.SetBool(nameof(isDrinkingCoffe), true);
-                }                
+                    animator.SetBool(nameof(isTalking), true);
+                }
                 break;
-            case LeonardStatesEnum.Idle:
-                if (!animator.GetBool(nameof(isIdle)))
+            //case LeonardStatesEnum.Idle:
+            //    if (!animator.GetBool(nameof(isIdle)))
+            //    {
+            //        CleanAnimationState();
+            //        animator.SetBool(nameof(isIdle), true);
+            //    }                
+            //    break;
+            case jefeStatesEnum.isTyping:
+                BossisGone = false;
+                if (!animator.GetBool(nameof(isSit)))
                 {
                     CleanAnimationState();
-                    animator.SetBool(nameof(isIdle), true);
-                }                
-                break;
-            case LeonardStatesEnum.isTyping:
-                if (!animator.GetBool(nameof(isTyping)))
-                {
-                    CleanAnimationState();
-                    animator.SetBool(nameof(isTyping), true);
-                    
+                    isSit = true;
+                    animator.SetBool(nameof(isSit), true);
+
                 }
                 break;
             default:
                 CleanAnimationState();
-                animator.SetBool(nameof(isIdle), true);
+                //animator.SetBool(nameof(isIdle), true);
                 break;
         }
         
@@ -110,14 +120,14 @@ public class Jefe : MonoBehaviour
     {
         animator.SetBool(nameof(isWalking), false);
         animator.SetBool(nameof(isSit), false);
-        animator.SetBool(nameof(isDrinkingCoffe), false);
-        animator.SetBool(nameof(isIdle), false);
-        animator.SetBool(nameof(isTyping), false);
+        animator.SetBool(nameof(isTalking), false);
+        //animator.SetBool(nameof(isIdle), false);
+        //animator.SetBool(nameof(isTyping), false);
         isWalking = false;
         isSit = false;
-        isDrinkingCoffe = false;
-        isIdle = false;
-        isTyping = false;
+        isTalking = false;
+        //isIdle = false;
+        //isTyping = false;
     }
 
     private void WaypointMovement()
@@ -165,8 +175,9 @@ public class Jefe : MonoBehaviour
         string tag = otherObject.tag;
         switch (tag)
         {
-            case Tags.Cafetera:
-                handleCafetera(otherObject);
+            case Tags.Waiting:
+                currentState = jefeStatesEnum.Talking;
+                Invoke("IsWaiting", 10.0f);
                 break;
             case Tags.Sit:
                handleDesk(otherObject);
@@ -174,59 +185,56 @@ public class Jefe : MonoBehaviour
             case Tags.Llamado:
                 handleCall(otherObject);
                 break;
+            case Tags.Player:
+                handlePlayer();
+                break;
             default:
                 break;
         }
         
 
     }
-    private void handleCafetera(GameObject otherObject)
+    private void handlePlayer()
     {
-        if (otherObject.GetComponent<Cafetera>().HasCoffee)
+        if (_ComputerBoss.lookingcomputer)
         {
-            currentState = LeonardStatesEnum.Drinking;
-            movingDifference = 0.0f;
-            GotoBathroom = true;
-            isDrinkingCoffe = true;
-            wayPointIndex++;
-            Invoke("IsWaiting", 7.0f);
-            Debug.Log("should wait here...");
+            Debug.Log("ME ENGANCHO");
+            //AGREGAR GRITO DEL JEFE
+            UIManager.Instance.HidePanel(UIPanelTypeEnum.ComputerBoss);
+            GameManager.GetGameManager().RestartScene(5);
         }
     }
 
     private void handleDesk(GameObject otherObject)
     {
-        Debug.Log("should sit here...");
+        
         sitPoint = otherObject.transform.Find("sitposition");
         Sit();
-        if (GotoBathroom)
-            Invoke("GotoBath", 5.0f);
+        //if (GotoBathroom)
+        //    Invoke("GotoBath", 5.0f);
     }
     private void handleCall(GameObject otherObject)
     {
-        Debug.Log("should talk to the phone here...");
-        currentState = LeonardStatesEnum.Idle;
-        audioSource.Play();
-        GotoBathroom = false;
-        Invoke("IsWaiting", 7.0f);
-        Debug.Log("should wait here...");
+        //Debug.Log("should talk to the phone here...");
+        //currentState = LeonardStatesEnum.Idle;
+        //audioSource.Play();
+        //GotoBathroom = false;
+        //Invoke("IsWaiting", 7.0f);
+        //Debug.Log("should wait here...");
     }
     public void IsWaiting()
     {      
-        currentState = LeonardStatesEnum.Walking;
+        currentState = jefeStatesEnum.Walking;
     }
-    public void GotoBath()
-    {      
-        currentState = LeonardStatesEnum.Walking;       
-    }
+   
     private void Sit()
-    { 
+    {
         if (!isSit)
-        {          
-          
-            transform.position = sitPoint.position;
-            transform.rotation = sitPoint.rotation;           
-            currentState = LeonardStatesEnum.isTyping;
+        {
+
+            transform.position = sitPoint.position;            
+            transform.rotation = sitPoint.rotation;
+            currentState = jefeStatesEnum.isTyping;
             if (rb != null)
             {
                 rb.isKinematic = true;

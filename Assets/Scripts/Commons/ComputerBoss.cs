@@ -15,6 +15,8 @@ public class ComputerBoss : MonoBehaviour
     private static ComputerBoss instance;
     private bool isViewing = false;
     private bool inCollision = false;
+    public bool lookingcomputer = false;
+    Jefe _Jefe;
     public static ComputerBoss Instance => instance;
     private void Awake()
     {
@@ -33,13 +35,17 @@ public class ComputerBoss : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    void Start()
+    {
+        _Jefe = FindObjectOfType<Jefe>();
+    }
     void Update()
     {
         InteractComputerBoss();
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag(Tags.Player) && !isViewing)
+        if (other.CompareTag(Tags.Player) && !isViewing && _Jefe.BossisGone)
         {
             UIManager.Instance.ShowPanel(UIPanelTypeEnum.Interactive);
             inCollision = true;
@@ -54,11 +60,13 @@ public class ComputerBoss : MonoBehaviour
             {
 
                 UIManager.Instance.HidePanel(UIPanelTypeEnum.ComputerBoss);
+                lookingcomputer = false;
                 GameManager.GetGameManager().SetEnablePlayerInput(true);
             }
             else
             {               
                 UIManager.Instance.ShowPanelComputerBoss();
+                lookingcomputer = true;
                 GameManager.GetGameManager().SetEnablePlayerInput(false);
             }
             isViewing = !isViewing;
