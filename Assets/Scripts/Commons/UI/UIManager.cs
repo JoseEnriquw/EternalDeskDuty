@@ -38,6 +38,8 @@ namespace Assets.Scripts.Commons.UI
         [SerializeField] private GameObject PanelBoard;
         [Header("Panel ComputerBoss")]
         [SerializeField] private GameObject PanelComputerBoss;
+        [Header("Panel Telefono")]
+        [SerializeField] private GameObject PanelTelefono;
 
         private Dictionary<UIPanelTypeEnum, GameObject> panels;
         private bool panelsLocked = false;
@@ -68,7 +70,8 @@ namespace Assets.Scripts.Commons.UI
                 { UIPanelTypeEnum.Printer, PanelPrinter },
                 { UIPanelTypeEnum.Fridge, PanelFridge },
                 { UIPanelTypeEnum.Board, PanelBoard },
-                 { UIPanelTypeEnum.ComputerBoss,PanelComputerBoss },
+                { UIPanelTypeEnum.ComputerBoss,PanelComputerBoss },
+                { UIPanelTypeEnum.Telefono,PanelTelefono },
             };
             GameManager.GameManager.GetGameManager().OnPanelLockStateChanged += SetPanelLockState;
         }
@@ -170,9 +173,16 @@ namespace Assets.Scripts.Commons.UI
         {
             GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
             ShowPanel(UIPanelTypeEnum.Fridge);
+        }
+
+        public void ShowPanelTelefono()
+        {
+            GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);
+            ShowPanel(UIPanelTypeEnum.Telefono);
 
         }
-        
+            
+
         public void ShowPanelComputerBoss()
         {
             GameManager.GameManager.GetGameManager().SetEnablePlayerInput(false);

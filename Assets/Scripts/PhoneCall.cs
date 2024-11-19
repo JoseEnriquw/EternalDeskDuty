@@ -4,6 +4,7 @@ using Assets.Scripts.Commons.Enums;
 using Assets.Scripts.Commons.GameManager;
 using Assets.Scripts.Commons.UI;
 using DialogueEditor;
+using TreeEditor;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -17,7 +18,8 @@ namespace Assets.Scripts
         private bool isCalling;
         private bool answered;
         private bool inCollision;
-
+        private int Loop1=0;
+        private bool inLoop = false;
         private void Start()
         {
             audioSource = GetComponent<AudioSource>();
@@ -44,12 +46,20 @@ namespace Assets.Scripts
         {
             if (Input.GetKeyDown(KeyCode.E) && inCollision)
             {
+                if (GameManager.GetGameManager().GetRestartCount() > 0)
+                    inLoop = true;
+
+                if (GameManager.GetGameManager().GetRestartCount() >1)
+                    Loop1 = GameManager.GetGameManager().GetRestartCount();
+
                 answered = true;
                 inCollision = false;
                 audioSource.Stop();
                 UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
                 GameManager.GetGameManager().SetEnablePlayerInput(false);
                 ConversationManager.Instance.StartConversation(myConversation);
+                ConversationManager.Instance.SetBool("inLoop", inLoop);
+                ConversationManager.Instance.SetInt("Loop1", Loop1);
             }
         }
 
