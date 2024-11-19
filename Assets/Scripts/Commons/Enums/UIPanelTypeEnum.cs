@@ -12,5 +12,6 @@ namespace Assets.Scripts.Commons.Enums
         Fridge=7,  
         Board=8,
         ComputerBoss=9,
+        Telefono=10,
     }
 }
