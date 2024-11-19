@@ -109,7 +109,8 @@ namespace Assets.Scripts.Commons.UI
             }
             else
             {
-                if(panelsLocked && typePanel!= UIPanelTypeEnum.Interactive) return;
+                if(panelsLocked && typePanel!= UIPanelTypeEnum.Interactive
+                    && UIPanelTypeEnum.Telefono!= typePanel) return;
                 var isValid = panels.TryGetValue(currentPanel.GetValueOrDefault(), out GameObject panelToHide);
                 var isCurrentPanel = currentPanel == typePanel;
                 if (!isValid || !isCurrentPanel || !panelToHide.activeSelf)

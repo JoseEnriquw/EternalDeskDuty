@@ -57,6 +57,7 @@ namespace Assets.Scripts
                 audioSource.Stop();
                 UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
                 GameManager.GetGameManager().SetEnablePlayerInput(false);
+                UIManager.Instance.ShowPanel(UIPanelTypeEnum.Telefono);
                 ConversationManager.Instance.StartConversation(myConversation);
                 ConversationManager.Instance.SetBool("inLoop", inLoop);
                 ConversationManager.Instance.SetInt("Loop1", Loop1);
