@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2308999, g: 0.24705367, b: 0.46005803, a: 1}
+  m_IndirectSpecularColor: {r: 0.23096547, g: 0.24698864, b: 0.46002632, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1318,7 +1318,7 @@ MonoBehaviour:
   isWalking: 0
   isSit: 0
   isDrinkingCoffe: 0
-  isIdle: 0
+  isIdle: 1
   isTyping: 0
   wayPointIndex: 0
   moveSpeed: 2
@@ -1326,7 +1326,9 @@ MonoBehaviour:
   isLoop: 0
   GotoBathroom: 0
   waitTime: 0
+  initialPostition: {fileID: 328598322}
   myConversation: {fileID: 126735267}
+  firstConversation: 0
   IknowKateBirthday: 0
   SaidHappyBirthday: 0
   Cake: 0
@@ -1345,38 +1347,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 38
-  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":2}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-41,\"yPos\":161},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"ehh,
-    Good morning\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-351,\"yPos\":367},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes!
-    Tell me how could I help you!\",\"parentUIDs\":[2],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-170,\"yPos\":470},\"ID\":4,\"ParamActions\":[{\"__type\":\"EditableSetBoolParamAction:#DialogueEditor\",\"ParameterName\":\"BadReaction\",\"Value\":true}],\"TMPFontGUID\":null,\"Text\":\"ugh
-    , can you ask Leonard?\",\"parentUIDs\":[2],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":8}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-541.5,\"yPos\":582},\"ID\":7,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes
-    no problem!\",\"parentUIDs\":[6],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":12}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":375,\"yPos\":170},\"ID\":9,\"ParamActions\":[{\"__type\":\"EditableSetBoolParamAction:#DialogueEditor\",\"ParameterName\":\"birthdaysaluteDone\",\"Value\":true}],\"TMPFontGUID\":null,\"Text\":\"Happy
-    Birthday Kate!\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":524.5,\"yPos\":-116},\"ID\":14,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Don't
-    talk to me\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":22}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":782.5,\"yPos\":178},\"ID\":15,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
-    have the report that you ask me\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":17}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":651.5,\"yPos\":38},\"ID\":16,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Hey
-    Kate\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":19}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1150.5,\"yPos\":139},\"ID\":18,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Not
-    yet, but I\u2019ll do it soon.\",\"parentUIDs\":[17],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":572,\"yPos\":394},\"ID\":20,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"cake?
-    great!!! thank you\",\"parentUIDs\":[12],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":27}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":906.5,\"yPos\":422},\"ID\":23,\"ParamActions\":[{\"__type\":\"EditableSetBoolParamAction:#DialogueEditor\",\"ParameterName\":\"SanchezReport\",\"Value\":true}],\"TMPFontGUID\":null,\"Text\":\"Give
-    Sanchez Report\",\"parentUIDs\":[22],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":25}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1139,\"yPos\":421},\"ID\":24,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Give
-    Martinez Report\",\"parentUIDs\":[22],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-122.5,\"yPos\":0},\"ID\":26,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Hey\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":29}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":109,\"yPos\":386},\"ID\":28,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes,
-    the Sanchez report I know!\",\"parentUIDs\":[2],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":31}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":165,\"yPos\":-97},\"ID\":30,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Something
-    is off!\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":34}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-175,\"yPos\":-332},\"ID\":32,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I'm
-    like in a time loop\",\"parentUIDs\":[31],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":65,\"yPos\":-355},\"ID\":33,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Nevermind\",\"parentUIDs\":[31],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":37}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-456,\"yPos\":-576},\"ID\":35,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"No,
-    Please ! believe me! \",\"parentUIDs\":[34],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-165,\"yPos\":-571},\"ID\":36,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"ha
-    ha very funny\",\"parentUIDs\":[34],\"SpeechUID\":-1}],\"Parameters\":[{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"FirstInteraction\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"BadReaction\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"Birthday\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"birthdaysaluteDone\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"Havereports\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"SanchezReport\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"MartinezReport\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"deliveryreport\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"inLoop\",\"BoolValue\":false},{\"__type\":\"EditableIntParameter:#DialogueEditor\",\"ParameterName\":\"Morethan1\",\"IntValue\":0}],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"FirstInteraction\",\"CheckType\":0,\"RequiredValue\":true},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"BadReaction\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":1},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"FirstInteraction\",\"CheckType\":0,\"RequiredValue\":false},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"Birthday\",\"CheckType\":0,\"RequiredValue\":true},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"BadReaction\",\"CheckType\":0,\"RequiredValue\":false},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"birthdaysaluteDone\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":9},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"FirstInteraction\",\"CheckType\":0,\"RequiredValue\":false},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"BadReaction\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":14},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"FirstInteraction\",\"CheckType\":0,\"RequiredValue\":false},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"Havereports\",\"CheckType\":0,\"RequiredValue\":true},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"deliveryreport\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":15},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"FirstInteraction\",\"CheckType\":0,\"RequiredValue\":false},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"birthdaysaluteDone\",\"CheckType\":0,\"RequiredValue\":true},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"Havereports\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":16},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"FirstInteraction\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":26},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableIntCondition:#DialogueEditor\",\"ParameterName\":\"Morethan1\",\"CheckType\":2,\"RequiredValue\":3}],\"NodeUID\":30}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":242,\"yPos\":18},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Hey
-    Brian!\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":3},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"inLoop\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":28}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-166,\"yPos\":245},\"ID\":2,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
-    have to ask you a huge favor!\",\"parentUIDs\":[1],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-197.5,\"yPos\":568},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Agh
-    Nevermind\",\"parentUIDs\":[4],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":7}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-475.5,\"yPos\":459},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Could
-    you print the report Mr. Sanchez send please?\",\"parentUIDs\":[3],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-625.5,\"yPos\":671},\"ID\":8,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Thank
-    you!\",\"parentUIDs\":[7],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":20}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":522,\"yPos\":263},\"ID\":12,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Oh,
-    thank you! You can have some cake; I left it in the refrigerator.\",\"parentUIDs\":[9],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":18}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":916.5,\"yPos\":22},\"ID\":17,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Have
-    you printed the report yet?\",\"parentUIDs\":[16],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1292.5,\"yPos\":248},\"ID\":19,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Okay,
-    but please hurry\u2014we need it for the meeting.\",\"parentUIDs\":[18],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"SanchezReport\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":23},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"MartinezReport\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":24}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":938,\"yPos\":260},\"ID\":22,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Oh,
-    great!\",\"parentUIDs\":[15],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1165.5,\"yPos\":539},\"ID\":25,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"This
-    is the wrong Client Brian\",\"parentUIDs\":[24],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":864.5,\"yPos\":531},\"ID\":27,\"ParamActions\":[{\"__type\":\"EditableSetBoolParamAction:#DialogueEditor\",\"ParameterName\":\"deliveryreport\",\"Value\":true}],\"TMPFontGUID\":null,\"Text\":\"Thank
-    You\",\"parentUIDs\":[23],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":126,\"yPos\":480},\"ID\":29,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes!
-    you are like a wizard! \",\"parentUIDs\":[28],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":32},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":33}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":24,\"yPos\":-242},\"ID\":31,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"What
-    do you mean?\",\"parentUIDs\":[30],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":35},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":36}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-354,\"yPos\":-459},\"ID\":34,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Did
-    you take something in the morning?\",\"parentUIDs\":[32],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-507,\"yPos\":-720},\"ID\":37,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Maybe
+  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":2}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-335.5,\"yPos\":333},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"ehh,
+    Good morning\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-645.5,\"yPos\":539},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes!
+    Tell me how could I help you!\",\"parentUIDs\":[2],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-464.5,\"yPos\":642},\"ID\":4,\"ParamActions\":[{\"__type\":\"EditableSetBoolParamAction:#DialogueEditor\",\"ParameterName\":\"BadReaction\",\"Value\":true}],\"TMPFontGUID\":null,\"Text\":\"ugh
+    , can you ask Leonard?\",\"parentUIDs\":[2],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":8}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-836,\"yPos\":754},\"ID\":7,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes
+    no problem!\",\"parentUIDs\":[6],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":12}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":80.5,\"yPos\":342},\"ID\":9,\"ParamActions\":[{\"__type\":\"EditableSetBoolParamAction:#DialogueEditor\",\"ParameterName\":\"birthdaysaluteDone\",\"Value\":true}],\"TMPFontGUID\":null,\"Text\":\"Happy
+    Birthday Kate!\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":230,\"yPos\":56},\"ID\":14,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Don't
+    talk to me\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":22}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":488,\"yPos\":350},\"ID\":15,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
+    have the report that you ask me\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":17}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":357,\"yPos\":210},\"ID\":16,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Hey
+    Kate\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":19}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":856,\"yPos\":311},\"ID\":18,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Not
+    yet, but I\u2019ll do it soon.\",\"parentUIDs\":[17],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":277.5,\"yPos\":566},\"ID\":20,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"cake?
+    great!!! thank you\",\"parentUIDs\":[12],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":27}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":612,\"yPos\":594},\"ID\":23,\"ParamActions\":[{\"__type\":\"EditableSetBoolParamAction:#DialogueEditor\",\"ParameterName\":\"SanchezReport\",\"Value\":true}],\"TMPFontGUID\":null,\"Text\":\"Give
+    Sanchez Report\",\"parentUIDs\":[22],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":25}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":844.5,\"yPos\":593},\"ID\":24,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Give
+    Martinez Report\",\"parentUIDs\":[22],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-417,\"yPos\":172},\"ID\":26,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Hey\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":29}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-185.5,\"yPos\":558},\"ID\":28,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes,
+    the Sanchez report I know!\",\"parentUIDs\":[2],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":31}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-129.5,\"yPos\":75},\"ID\":30,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Something
+    is off!\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":34}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-469.5,\"yPos\":-160},\"ID\":32,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I'm
+    like in a time loop\",\"parentUIDs\":[31],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-229.5,\"yPos\":-183},\"ID\":33,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Nevermind\",\"parentUIDs\":[31],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":37}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-750.5,\"yPos\":-404},\"ID\":35,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"No,
+    Please ! believe me! \",\"parentUIDs\":[34],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-459.5,\"yPos\":-399},\"ID\":36,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"ha
+    ha very funny\",\"parentUIDs\":[34],\"SpeechUID\":-1}],\"Parameters\":[{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"FirstInteraction\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"BadReaction\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"Birthday\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"birthdaysaluteDone\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"Havereports\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"SanchezReport\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"MartinezReport\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"deliveryreport\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"inLoop\",\"BoolValue\":false},{\"__type\":\"EditableIntParameter:#DialogueEditor\",\"ParameterName\":\"Morethan1\",\"IntValue\":0}],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"FirstInteraction\",\"CheckType\":0,\"RequiredValue\":true},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"BadReaction\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":1},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"FirstInteraction\",\"CheckType\":0,\"RequiredValue\":false},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"Birthday\",\"CheckType\":0,\"RequiredValue\":true},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"BadReaction\",\"CheckType\":0,\"RequiredValue\":false},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"birthdaysaluteDone\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":9},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"FirstInteraction\",\"CheckType\":0,\"RequiredValue\":false},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"BadReaction\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":14},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"FirstInteraction\",\"CheckType\":0,\"RequiredValue\":false},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"Havereports\",\"CheckType\":0,\"RequiredValue\":true},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"deliveryreport\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":15},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"FirstInteraction\",\"CheckType\":0,\"RequiredValue\":false},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"birthdaysaluteDone\",\"CheckType\":0,\"RequiredValue\":true},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"Havereports\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":16},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"FirstInteraction\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":26},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableIntCondition:#DialogueEditor\",\"ParameterName\":\"Morethan1\",\"CheckType\":2,\"RequiredValue\":3}],\"NodeUID\":30}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":-52.5,\"yPos\":190},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Hey
+    Brian!\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":3},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"inLoop\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":28}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-460.5,\"yPos\":417},\"ID\":2,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
+    have to ask you a huge favor!\",\"parentUIDs\":[1],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-492,\"yPos\":740},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Agh
+    Nevermind\",\"parentUIDs\":[4],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":7}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-770,\"yPos\":631},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Could
+    you print the report Mr. Sanchez send please?\",\"parentUIDs\":[3],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-920,\"yPos\":843},\"ID\":8,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Thank
+    you!\",\"parentUIDs\":[7],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":20}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":227.5,\"yPos\":435},\"ID\":12,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Oh,
+    thank you! You can have some cake; I left it in the refrigerator.\",\"parentUIDs\":[9],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":18}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":622,\"yPos\":194},\"ID\":17,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Have
+    you printed the report yet?\",\"parentUIDs\":[16],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":998,\"yPos\":420},\"ID\":19,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Okay,
+    but please hurry\u2014we need it for the meeting.\",\"parentUIDs\":[18],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"SanchezReport\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":23},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"MartinezReport\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":24}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":643.5,\"yPos\":432},\"ID\":22,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Oh,
+    great!\",\"parentUIDs\":[15],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":871,\"yPos\":711},\"ID\":25,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"This
+    is the wrong Client Brian\",\"parentUIDs\":[24],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":570,\"yPos\":703},\"ID\":27,\"ParamActions\":[{\"__type\":\"EditableSetBoolParamAction:#DialogueEditor\",\"ParameterName\":\"deliveryreport\",\"Value\":true}],\"TMPFontGUID\":null,\"Text\":\"Thank
+    You\",\"parentUIDs\":[23],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-168.5,\"yPos\":652},\"ID\":29,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes!
+    you are like a wizard! \",\"parentUIDs\":[28],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":32},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":33}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-270.5,\"yPos\":-70},\"ID\":31,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"What
+    do you mean?\",\"parentUIDs\":[30],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":35},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":36}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-648.5,\"yPos\":-287},\"ID\":34,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Did
+    you take something in the morning?\",\"parentUIDs\":[32],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-801.5,\"yPos\":-548},\"ID\":37,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Maybe
     you need to go to the doctor\",\"parentUIDs\":[35],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Kate\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1}]}"
   saveVersion: 110
   DefaultName: Kate
@@ -3609,10 +3611,275 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 24667862314294179, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 24667862314294179, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 24667862314294179, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 24667862314294179, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 44225537679373879, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 44225537679373879, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 44225537679373879, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 110674238388492779, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 110674238388492779, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 110674238388492779, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 167170169001847764, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 167170169001847764, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 167170169001847764, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 167170169001847764, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 186060877285011961, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 186060877285011961, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 186060877285011961, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1992396085}
+    - target: {fileID: 186060877285011961, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 186060877285011961, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 186060877285011961, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Phone, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 186060877285011961, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 186060877285011961, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 303603560776254620, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 354572551860370556, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 354572551860370556, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 354572551860370556, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 457422775116583390, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -118.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 525711653378323659, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 248.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 525711653378323659, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 110.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 590707635588655022, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 590707635588655022, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 590707635588655022, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1992396085}
+    - target: {fileID: 590707635588655022, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 590707635588655022, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 590707635588655022, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Phone, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 590707635588655022, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590707635588655022, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 633092628522372617, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 712699081647074498, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 716569657818267405, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 716569657818267405, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 716569657818267405, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 732967298141868310, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 732967298141868310, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 732967298141868310, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 732967298141868310, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 958323506703894499, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 958323506703894499, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 958323506703894499, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 958323506703894499, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 996888878057127200, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102113695709428152, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102113695709428152, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102113695709428152, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1365822574812466279, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
@@ -3624,21 +3891,431 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3290150652305610929}
+    - target: {fileID: 1365935383530121111, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365935383530121111, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365935383530121111, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365935383530121111, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406860231812457403, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406860231812457403, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406860231812457403, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428902290069987753, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430953448499686571, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430953448499686571, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430953448499686571, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1430953448499686571, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1620345459594530457, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1618654180349532340}
+    - target: {fileID: 1769787630255915905, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779281819794964615, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779281819794964615, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779281819794964615, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 208.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779281819794964615, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779281819794964615, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 124.235
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779281819794964615, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -55.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781379864141649460, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 15.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781379864141649460, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781379864141649460, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781379864141649460, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959624473263251786, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959624473263251786, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959624473263251786, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1992396085}
+    - target: {fileID: 1959624473263251786, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959624473263251786, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959624473263251786, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Phone, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959624473263251786, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959624473263251786, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998086890089464810, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2133811345882369524, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160838061274167442, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160838061274167442, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160838061274167442, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2212161822279246180, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2212161822279246180, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2212161822279246180, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2212161822279246180, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2282020083172989151, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321433911247220336, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321433911247220336, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321433911247220336, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476675527975608832, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476675527975608832, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476675527975608832, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874963070505654141, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920006420647156329, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 333.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920006420647156329, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 110.44
+      objectReference: {fileID: 0}
     - target: {fileID: 2925155605886341133, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4825763248050516}
+    - target: {fileID: 2925608312569063351, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925608312569063351, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925608312569063351, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928503815851340972, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928503815851340972, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928503815851340972, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928503815851340972, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053193434241800558, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053193434241800558, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053193434241800558, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075236233710055994, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083484851660823318, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093232059535393663, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 17.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093232059535393663, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093232059535393663, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093232059535393663, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128075428445332322, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239072348257816922, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239072348257816922, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239072348257816922, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3239072348257816922, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3296456622347144968, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320983237673467051, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3386282031369450457, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 126735266}
+    - target: {fileID: 3391824795684276490, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391824795684276490, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391824795684276490, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1992396085}
+    - target: {fileID: 3391824795684276490, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391824795684276490, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391824795684276490, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Phone, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391824795684276490, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391824795684276490, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395661680754113114, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3474084233537964024, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3649,21 +4326,461 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3290150652305610929}
+    - target: {fileID: 3578621385438918618, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -141.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624917627312462190, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -70.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3793726366838976630, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3793726366838976630, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3793726366838976630, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3793726366838976630, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796521896998996635, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -299.8234
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796521896998996635, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -218.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796521896998996635, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 27.4503
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796521896998996635, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 79.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871401140316608830, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871401140316608830, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871401140316608830, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871401140316608830, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3908260490170288025, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1618654180349532340}
+    - target: {fileID: 3920987636121648903, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967796796902980313, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990314808380184130, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990314808380184130, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990314808380184130, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990314808380184130, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327674137204996543, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 248.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327674137204996543, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 110.44
+      objectReference: {fileID: 0}
     - target: {fileID: 4344878296313132301, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359078103717340884, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359078103717340884, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359078103717340884, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359078103717340884, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420366270210387323, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420366270210387323, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420366270210387323, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1992396085}
+    - target: {fileID: 4420366270210387323, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420366270210387323, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420366270210387323, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Phone, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420366270210387323, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420366270210387323, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504176803448738299, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545964612796392504, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545964612796392504, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545964612796392504, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610745224542884693, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610745224542884693, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610745224542884693, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610745224542884693, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677415541377369694, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677415541377369694, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677415541377369694, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677415541377369694, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735168977872270961, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754174147493208415, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754174147493208415, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754174147493208415, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1992396085}
+    - target: {fileID: 4754174147493208415, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754174147493208415, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754174147493208415, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Phone, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754174147493208415, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754174147493208415, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4927877319950571490, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4825763248050516}
+    - target: {fileID: 5040279642415311812, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 15.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040279642415311812, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040279642415311812, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040279642415311812, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076670167365962845, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076670167365962845, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076670167365962845, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095128126350917566, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095128126350917566, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095128126350917566, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 208.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095128126350917566, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095128126350917566, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 124.235
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095128126350917566, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -55.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113517581517099706, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113517581517099706, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113517581517099706, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121600550231654610, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121600550231654610, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121600550231654610, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121600550231654610, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124123779853140887, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124123779853140887, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124123779853140887, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 293.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124123779853140887, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124123779853140887, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 166.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124123779853140887, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -55.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162708031200824947, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162708031200824947, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5162708031200824947, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167972973064214539, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167972973064214539, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167972973064214539, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5167972973064214539, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5199536924754561024, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3674,6 +4791,66 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3290150652305610929}
+    - target: {fileID: 5229463408629186550, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229463408629186550, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229463408629186550, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229463408629186550, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365669458017166661, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365669458017166661, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365669458017166661, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1992396085}
+    - target: {fileID: 5365669458017166661, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365669458017166661, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365669458017166661, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Phone, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365669458017166661, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365669458017166661, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5384189443136389520, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3774,6 +4951,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5504905412322117771, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 310.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504905412322117771, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 16.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504905412322117771, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 77.64429
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504905412322117771, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 24.6407
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571161099426962645, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571161099426962645, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571161099426962645, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5660985724754137323, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5802524230412225237, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3784,16 +5001,611 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3290150652305610929}
+    - target: {fileID: 5820903623286596286, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820903623286596286, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820903623286596286, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829746356979433095, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998883160905272427, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038362618890811710, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038362618890811710, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038362618890811710, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065625639381450481, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065625639381450481, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065625639381450481, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065625639381450481, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123330160399279096, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132331707359767712, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132331707359767712, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132331707359767712, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132331707359767712, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166125947612241780, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166125947612241780, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166125947612241780, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274807719691215391, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274807719691215391, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274807719691215391, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274807719691215391, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6384816461732348025, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1618654180349532340}
+    - target: {fileID: 6443018913987838227, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443018913987838227, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443018913987838227, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614568599647409909, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614568599647409909, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614568599647409909, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675011267412826700, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675011267412826700, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6675011267412826700, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742892864248302789, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742892864248302789, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742892864248302789, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742892864248302789, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745542365271891003, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817892867528089483, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817892867528089483, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817892867528089483, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 293.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817892867528089483, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817892867528089483, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 166.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817892867528089483, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -55.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884709217759609803, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884709217759609803, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884709217759609803, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892370000592510001, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -95.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900391857093576130, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900391857093576130, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900391857093576130, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962327577176130720, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 15.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962327577176130720, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962327577176130720, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962327577176130720, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157755885178661197, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157755885178661197, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157755885178661197, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1992396085}
+    - target: {fileID: 7157755885178661197, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157755885178661197, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157755885178661197, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Phone, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157755885178661197, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157755885178661197, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182757985940132228, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182757985940132228, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182757985940132228, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182757985940132228, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7349248078851083726, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 333.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7349248078851083726, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 110.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354787757346901714, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364456281001239870, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392986067529166335, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483429204105500367, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483429204105500367, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483429204105500367, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483429204105500367, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7537928413064124551, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 126735266}
+    - target: {fileID: 7786154679723037224, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786154679723037224, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786154679723037224, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786154679723037224, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880161078408675666, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880161078408675666, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880161078408675666, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1992396085}
+    - target: {fileID: 7880161078408675666, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880161078408675666, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880161078408675666, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Phone, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880161078408675666, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880161078408675666, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938879999648133527, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 17.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938879999648133527, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938879999648133527, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938879999648133527, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7958803956692092937, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154269063093006954, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154269063093006954, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154269063093006954, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8154269063093006954, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8179269630584934853, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217155530172879702, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294196544270491299, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 17.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294196544270491299, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294196544270491299, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294196544270491299, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306646202221402656, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306646202221402656, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306646202221402656, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306646202221402656, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403506465016217649, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416765017214848112, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416765017214848112, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416765017214848112, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470086961681933358, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470086961681933358, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470086961681933358, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470086961681933358, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590282324365248288, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590282324365248288, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590282324365248288, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590282324365248288, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8609126676042241492, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3804,10 +5616,201 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3290150652305610929}
+    - target: {fileID: 8768454332587774588, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768454332587774588, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768454332587774588, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768454332587774588, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775096866899487516, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775096866899487516, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775096866899487516, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775096866899487516, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795313951687811980, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795313951687811980, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795313951687811980, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795313951687811980, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798202771923799507, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798202771923799507, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798202771923799507, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798202771923799507, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928401777226014851, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946562431444837209, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946562431444837209, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946562431444837209, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1992396085}
+    - target: {fileID: 8946562431444837209, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946562431444837209, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnButtonPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946562431444837209, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Phone, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946562431444837209, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946562431444837209, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967810912810742108, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967810912810742108, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967810912810742108, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8967810912810742108, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082001889442587945, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082001889442587945, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082001889442587945, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203030225174478706, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203030225174478706, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203030225174478706, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4279650647424022093, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1809413561}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 712699081647074498, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1992396085}
+    - targetCorrespondingSourceObject: {fileID: 712699081647074498, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1992396087}
+    - targetCorrespondingSourceObject: {fileID: 712699081647074498, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1992396086}
   m_SourcePrefab: {fileID: 100100000, guid: 2927f9b76e1615d4092cbbc32f52e9b7, type: 3}
 --- !u!1 &277039544 stripped
 GameObject:
@@ -4213,15 +6216,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 11
-  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":3}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-18.5,\"yPos\":175},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Good
-    Morning Lousse\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":271.5,\"yPos\":174},\"ID\":2,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Don't
-    bother me so early\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":8}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-59.5,\"yPos\":375},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes!
-    I remember\",\"parentUIDs\":[3],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":7}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":262.5,\"yPos\":371},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I'm
-    sorry, bad night\",\"parentUIDs\":[4],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":1},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":2}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":122,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Good
-    morning Brian\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lousse\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-66.5,\"yPos\":267},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ah,
-    don\u2019t forget to deliver the report at 10. It\u2019s important!\",\"parentUIDs\":[1],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lousse\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":268.5,\"yPos\":264},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Someone\u2019s
-    in a bad mood\",\"parentUIDs\":[2],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lousse\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":246.5,\"yPos\":457},\"ID\":7,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"hummm
-    you better get to work\",\"parentUIDs\":[6],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lousse\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-90,\"yPos\":458},\"ID\":8,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"See
+  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":3}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":97.5,\"yPos\":255},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Good
+    Morning Lousse\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":386.5,\"yPos\":254},\"ID\":2,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Don't
+    bother me so early\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":8}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":56.5,\"yPos\":455},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes!
+    I remember\",\"parentUIDs\":[3],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":7}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":378.5,\"yPos\":451},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I'm
+    sorry, bad night\",\"parentUIDs\":[4],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":1},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":2}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":238,\"yPos\":102},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Good
+    morning Brian\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lousse\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":49.5,\"yPos\":347},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ah,
+    don\u2019t forget to deliver the report at 10. It\u2019s important!\",\"parentUIDs\":[1],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lousse\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":384.5,\"yPos\":344},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Someone\u2019s
+    in a bad mood\",\"parentUIDs\":[2],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lousse\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":362.5,\"yPos\":537},\"ID\":7,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"hummm
+    you better get to work\",\"parentUIDs\":[6],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lousse\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":26,\"yPos\":538},\"ID\":8,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"See
     you later\",\"parentUIDs\":[5],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lousse\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1}]}"
   saveVersion: 110
   DefaultName: Lousse
@@ -4744,6 +6747,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 327418552}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &328598321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 328598322}
+  m_Layer: 0
+  m_Name: Kateinitialposition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &328598322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328598321}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.03, y: 0.05799997, z: -8.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &337167635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4469440552435346, guid: 879cb87e1d568e0468212a4ef47d7ae3,
@@ -6060,7 +8094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e860f1a13e8c234ea41d41f0185a01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HasCoffee: 1
+  HasCoffee: 0
   interacted: 0
 --- !u!135 &460280119
 SphereCollider:
@@ -7211,7 +9245,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604983007}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -8083,7 +10117,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689735547}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -8700,7 +10734,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758117148}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -9052,7 +11086,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769641669}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -12040,7 +14074,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927563310}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -12479,7 +14513,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943115137}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -12647,7 +14681,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959304069}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -13057,7 +15091,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974577273}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -13670,7 +15704,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030353258}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -16711,7 +18745,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179274127}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -18586,7 +20620,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260037028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -19185,7 +21219,7 @@ PrefabInstance:
     - target: {fileID: 7061135642889225534, guid: 9c87ff614b3962b4baebe14ed39cde94,
         type: 3}
       propertyPath: waitTime
-      value: 30
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23790,7 +25824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 1
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":249,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":null,"parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":206.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":null,"parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -24379,7 +26413,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674459566}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -25638,7 +27672,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 421739800590653909, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969359041105430120, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050842206002770575, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937400248234546980, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6690953977496485560, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828366530992007397, guid: 9c87ff614b3962b4baebe14ed39cde94,
         type: 3}
       propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -26773,6 +28832,140 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4, y: 0.099999994, z: 4}
   m_Center: {x: 2, y: -0.049999997, z: -2}
+--- !u!1 &1809413558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1809413561}
+  - component: {fileID: 1809413560}
+  - component: {fileID: 1809413559}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1809413559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809413558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 15
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 15
+  m_fontSizeMax: 15
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1809413560
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809413558}
+  m_CullTransparentMesh: 1
+--- !u!224 &1809413561
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809413558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.30173, y: 0.30173, z: 0.30173}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1992396084}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 19.6, y: 50.8}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1812941227 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1758821244686228, guid: 879cb87e1d568e0468212a4ef47d7ae3,
@@ -27017,7 +29210,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 421739800590653909, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969359041105430120, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050842206002770575, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937400248234546980, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6690953977496485560, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828366530992007397, guid: 9c87ff614b3962b4baebe14ed39cde94,
         type: 3}
       propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -27826,7 +30044,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864881848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -28307,7 +30525,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888962843}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -28566,7 +30784,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   NodeID: 6
-  TMPFont: {fileID: 0}
+  TMPFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   Icon: {fileID: 0}
   Audio: {fileID: 0}
 --- !u!114 &1891772356
@@ -28597,7 +30815,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   NodeID: 5
-  TMPFont: {fileID: 0}
+  TMPFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   Icon: {fileID: 0}
   Audio: {fileID: 0}
 --- !u!114 &1891772357
@@ -28654,7 +30872,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   NodeID: 2
-  TMPFont: {fileID: 0}
+  TMPFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   Icon: {fileID: 0}
   Audio: {fileID: 0}
 --- !u!114 &1891772360
@@ -28673,7 +30891,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   NodeID: 1
-  TMPFont: {fileID: 0}
+  TMPFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   Icon: {fileID: 0}
   Audio: {fileID: 0}
 --- !u!114 &1891772361
@@ -30207,42 +32425,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 36
-  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":119.5,\"yPos\":123},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"No,
-    I just wanted to check if you need anything.\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":9},{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":601.5,\"yPos\":175},\"ID\":2,\"ParamActions\":[{\"__type\":\"EditableSetBoolParamAction:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"Value\":false}],\"TMPFontGUID\":null,\"Text\":\"It
-    is. I need to discuss something urgent.\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-59.5,\"yPos\":423},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes,
-    boss. I'll have it ready right away.\",\"parentUIDs\":[4],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":177.5,\"yPos\":420},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
-    understand. I'll get on it right away.\",\"parentUIDs\":[4],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":15}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":480.5,\"yPos\":464},\"ID\":11,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Uh...
+  json: "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":118,\"yPos\":199},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"No,
+    I just wanted to check if you need anything.\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":9},{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":613,\"yPos\":175},\"ID\":2,\"ParamActions\":[{\"__type\":\"EditableSetBoolParamAction:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"Value\":false}],\"TMPFontGUID\":null,\"Text\":\"It
+    is. I need to discuss something urgent.\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-48,\"yPos\":423},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes,
+    boss. I'll have it ready right away.\",\"parentUIDs\":[4],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":189,\"yPos\":420},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
+    understand. I'll get on it right away.\",\"parentUIDs\":[4],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":15}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":492,\"yPos\":464},\"ID\":11,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Uh...
     I brought the report you asked for. I thought it was best to deliver it right
-    away.\",\"parentUIDs\":[9],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":13}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":711.5,\"yPos\":478},\"ID\":12,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Did
-    you see the game last night? What a goal! It was tremendous.\",\"parentUIDs\":[9],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":15}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":699.5,\"yPos\":684},\"ID\":14,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"deliver
-    report\",\"parentUIDs\":[13],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":18}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1022.5,\"yPos\":475},\"ID\":16,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
-    heard something interesting about what happened with Marta from accounting...\",\"parentUIDs\":[10],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":19}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1263.5,\"yPos\":470},\"ID\":17,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
-    was thinking about taking a few days off to rest.\",\"parentUIDs\":[10],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1160.5,\"yPos\":734},\"ID\":20,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I'm
-    sorry\",\"parentUIDs\":[18,19],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":22}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":646,\"yPos\":48},\"ID\":21,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
-    have the report\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":24}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1123,\"yPos\":148},\"ID\":23,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Sorry,
-    I was busy\",\"parentUIDs\":[22],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":26}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1228,\"yPos\":36},\"ID\":25,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Here
-    it is\",\"parentUIDs\":[22],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":28}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1697,\"yPos\":146},\"ID\":27,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Give
-    Sanchez Report\",\"parentUIDs\":[26],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":30}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1779,\"yPos\":46},\"ID\":29,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Give
-    Martinez Report\",\"parentUIDs\":[26],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":32}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1835,\"yPos\":-70},\"ID\":31,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Give
-    Report\",\"parentUIDs\":[26],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":35}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":421,\"yPos\":-157},\"ID\":34,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"There
-    is coffe and Cake In the Kitchen\",\"parentUIDs\":[0],\"SpeechUID\":-1}],\"Parameters\":[{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"SanchezReport\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"MartinezReport\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"BossReport\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"deliveryreport\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"KateBirthday\",\"BoolValue\":false}],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":1},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":2},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"CheckType\":0,\"RequiredValue\":true},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"deliveryreport\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":21},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"deliveryreport\",\"CheckType\":0,\"RequiredValue\":true},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"KateBirthday\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":34}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":230.5,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I'm
-    busy. This better be important.\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":45.5,\"yPos\":205},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"You
-    know what I need. And it's not more time wasted.\",\"parentUIDs\":[1],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":11},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":12}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":529.5,\"yPos\":339},\"ID\":9,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"So
-    what's so important that it couldn't wait?\",\"parentUIDs\":[2],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":16},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":17}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1156.5,\"yPos\":333},\"ID\":10,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"So
-    what's so important that it couldn't wait?\",\"parentUIDs\":[2],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"BossReport\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":14}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":707.5,\"yPos\":568},\"ID\":13,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes,
-    of course! That goal was crazy. You made my morning. \\nRemember the report...\",\"parentUIDs\":[12],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":541.5,\"yPos\":766},\"ID\":15,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Well
+    away.\",\"parentUIDs\":[9],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":13}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":723,\"yPos\":478},\"ID\":12,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Did
+    you see the game last night? What a goal! It was tremendous.\",\"parentUIDs\":[9],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":15}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":711,\"yPos\":684},\"ID\":14,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"deliver
+    report\",\"parentUIDs\":[13],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":18}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1034,\"yPos\":475},\"ID\":16,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
+    heard something interesting about what happened with Marta from accounting...\",\"parentUIDs\":[10],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":19}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1275,\"yPos\":470},\"ID\":17,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
+    was thinking about taking a few days off to rest.\",\"parentUIDs\":[10],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1172,\"yPos\":734},\"ID\":20,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I'm
+    sorry\",\"parentUIDs\":[18,19],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":22}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":657.5,\"yPos\":48},\"ID\":21,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
+    have the report\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":24}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1134.5,\"yPos\":148},\"ID\":23,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Sorry,
+    I was busy\",\"parentUIDs\":[22],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":26}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1239.5,\"yPos\":36},\"ID\":25,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Here
+    it is\",\"parentUIDs\":[22],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":28}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1708.5,\"yPos\":146},\"ID\":27,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Give
+    Sanchez Report\",\"parentUIDs\":[26],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":30}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1790.5,\"yPos\":46},\"ID\":29,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Give
+    Martinez Report\",\"parentUIDs\":[26],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":32}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1846.5,\"yPos\":-70},\"ID\":31,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Give
+    Report\",\"parentUIDs\":[26],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":35}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":432.5,\"yPos\":-157},\"ID\":34,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"There
+    is coffe and Cake In the Kitchen\",\"parentUIDs\":[0],\"SpeechUID\":-1}],\"Parameters\":[{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"SanchezReport\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"MartinezReport\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"BossReport\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"deliveryreport\",\"BoolValue\":false},{\"__type\":\"EditableBoolParameter:#DialogueEditor\",\"ParameterName\":\"KateBirthday\",\"BoolValue\":false}],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":1},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":2},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"tieneInforme\",\"CheckType\":0,\"RequiredValue\":true},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"deliveryreport\",\"CheckType\":0,\"RequiredValue\":false}],\"NodeUID\":21},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"deliveryreport\",\"CheckType\":0,\"RequiredValue\":true},{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"KateBirthday\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":34}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":242,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I'm
+    busy. This better be important.\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":6}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":35,\"yPos\":295},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"You
+    know what I need. And it's not more time wasted.\",\"parentUIDs\":[1],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":11},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":12}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":541,\"yPos\":339},\"ID\":9,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"So
+    what's so important that it couldn't wait?\",\"parentUIDs\":[2],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":16},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":17}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1168,\"yPos\":333},\"ID\":10,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"So
+    what's so important that it couldn't wait?\",\"parentUIDs\":[2],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"BossReport\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":14}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":719,\"yPos\":568},\"ID\":13,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yes,
+    of course! That goal was crazy. You made my morning. \\nRemember the report...\",\"parentUIDs\":[12],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":553,\"yPos\":766},\"ID\":15,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Well
     done! Congratulations, this is just what I needed. Now, listen carefully\u2026
     you're going to get a call later, from the people at Company X. It's crucial,
     but something doesn't smell right. The stakes are bigger than they seem. Everything
-    you need is in the office.\",\"parentUIDs\":[11,14],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":20}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1029.5,\"yPos\":580},\"ID\":18,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Are
-    you here to talk gossip? I'll pay you for results, not rumors.\",\"parentUIDs\":[16],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":20}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1310.5,\"yPos\":585},\"ID\":19,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Days
-    off? Is this what you consider 'important'? I hope you get your work done first.\",\"parentUIDs\":[17],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":23},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":25}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":907,\"yPos\":35},\"ID\":22,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"It
-    was about time Brian\",\"parentUIDs\":[21],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1381,\"yPos\":216},\"ID\":24,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
-    don't want to hear your excuses\",\"parentUIDs\":[23],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"SanchezReport\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":27},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"MartinezReport\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":29},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"BossReport\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":31}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1495,\"yPos\":-3},\"ID\":26,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Give
-    it to me\",\"parentUIDs\":[25],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1712,\"yPos\":255},\"ID\":28,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"This
-    is not what I need\",\"parentUIDs\":[27],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1967,\"yPos\":160},\"ID\":30,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"This
-    is not what I need\",\"parentUIDs\":[29],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":2093,\"yPos\":8},\"ID\":32,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Thank
-    you, you can continue\",\"parentUIDs\":[31],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":746,\"yPos\":-172},\"ID\":35,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Thanks
+    you need is in the office.\",\"parentUIDs\":[11,14],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":20}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1041,\"yPos\":580},\"ID\":18,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Are
+    you here to talk gossip? I'll pay you for results, not rumors.\",\"parentUIDs\":[16],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":20}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1322,\"yPos\":585},\"ID\":19,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Days
+    off? Is this what you consider 'important'? I hope you get your work done first.\",\"parentUIDs\":[17],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":23},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":25}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":918.5,\"yPos\":35},\"ID\":22,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"It
+    was about time Brian\",\"parentUIDs\":[21],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1392.5,\"yPos\":216},\"ID\":24,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I
+    don't want to hear your excuses\",\"parentUIDs\":[23],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"SanchezReport\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":27},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"MartinezReport\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":29},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[{\"__type\":\"EditableBoolCondition:#DialogueEditor\",\"ParameterName\":\"BossReport\",\"CheckType\":0,\"RequiredValue\":true}],\"NodeUID\":31}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1506.5,\"yPos\":-3},\"ID\":26,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Give
+    it to me\",\"parentUIDs\":[25],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1723.5,\"yPos\":255},\"ID\":28,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"This
+    is not what I need\",\"parentUIDs\":[27],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":1978.5,\"yPos\":160},\"ID\":30,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"This
+    is not what I need\",\"parentUIDs\":[29],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":2104.5,\"yPos\":8},\"ID\":32,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Thank
+    you, you can continue\",\"parentUIDs\":[31],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":757.5,\"yPos\":-172},\"ID\":35,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Thanks
     for let me know\",\"parentUIDs\":[34],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Jefe\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
   saveVersion: 110
   DefaultName: Jefe
@@ -31142,6 +33360,226 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1990467093}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1992396081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 712699081647074498, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 277039543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1992396084 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4279650647424022093, guid: 2927f9b76e1615d4092cbbc32f52e9b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 277039543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1992396085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992396081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc5aebe154b085418c12fdda7826d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayText: {fileID: 1809413559}
+  secretCode: 1084
+  gotout: {fileID: 8300000, guid: cdc94d076aa9f5240b435ae5e7c752a5, type: 3}
+  nextloop: {fileID: 8300000, guid: b9f2985e757f9684ca94d3d1d5575154, type: 3}
+--- !u!82 &1992396086
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992396081}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1992396087
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992396081}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1997885437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31336,7 +33774,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013049119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -31418,8 +33856,38 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3852935656990629450, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
         type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -6.1807
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852935656990629450, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -153.8152
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852935656990629450, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.0903
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852935656990629450, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
+        type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: -46.8107
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900108754347413305, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900108754347413305, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900108754347413305, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3900108754347413305, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
         type: 3}
@@ -31434,7 +33902,7 @@ PrefabInstance:
     - target: {fileID: 3900108754347413311, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.80000687
+      value: -0.8000088
       objectReference: {fileID: 0}
     - target: {fileID: 3900108755062758285, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
         type: 3}
@@ -31544,22 +34012,37 @@ PrefabInstance:
     - target: {fileID: 3900108755395677323, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 612.0687
+      value: 619.5356
       objectReference: {fileID: 0}
     - target: {fileID: 3900108755395677323, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 74.3463
+      value: 47.3802
       objectReference: {fileID: 0}
     - target: {fileID: 3900108755395677323, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 9.681905
+      value: 5.9484997
       objectReference: {fileID: 0}
     - target: {fileID: 3900108755395677323, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -39.330635
+      value: -89.28643
+      objectReference: {fileID: 0}
+    - target: {fileID: 6116449485086562217, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6116449485086562217, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6116449485086562217, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6116449485086562217, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
         type: 3}
@@ -33391,7 +35874,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 421739800590653909, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969359041105430120, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4050842206002770575, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937400248234546980, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6690953977496485560, guid: 9c87ff614b3962b4baebe14ed39cde94,
+        type: 3}
+      propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828366530992007397, guid: 9c87ff614b3962b4baebe14ed39cde94,
         type: 3}
       propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -33473,7 +35981,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109863434}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -33578,7 +36086,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126883736}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -35560,3 +38068,4 @@ SceneRoots:
   - {fileID: 1001223145}
   - {fileID: 1830466872}
   - {fileID: 1277817102}
+  - {fileID: 328598322}

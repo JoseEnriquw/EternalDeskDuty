@@ -1289,7 +1289,9 @@ MonoBehaviour:
   isLoop: 0
   GotoBathroom: 0
   waitTime: 0
+  initialPostition: {fileID: 0}
   myConversation: {fileID: 126735267}
+  firstConversation: 0
   IknowKateBirthday: 0
   SaidHappyBirthday: 0
   Cake: 0

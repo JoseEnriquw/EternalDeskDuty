@@ -15,6 +15,7 @@ namespace Assets.Scripts.Commons.GameManager
         public Action<Transform> OnChangePlayerPosition;
         public Action<Transform> OnChangePlayerRotation;
         public Action<bool> OnPanelLockStateChanged;
+        public Action OnRestart;
 
         private void Awake()
         {
@@ -38,6 +39,7 @@ namespace Assets.Scripts.Commons.GameManager
             CustomTimer.Instance.ResetTimer();
             restartCount++;
             Debug.Log("Restart number:"+restartCount);
+            OnRestart?.Invoke();
         }
 
         public int GetRestartCount()

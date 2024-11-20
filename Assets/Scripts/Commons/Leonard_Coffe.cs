@@ -248,7 +248,7 @@ public class Leonard_Coffe : MonoBehaviour
         sitPoint = otherObject.transform.Find("sitposition");
         Sit();
         if (GotoBathroom)
-            Invoke("GotoBath", 5.0f);
+            Invoke("GotoBath", 20.0f);
     }
     private void handleCall(GameObject otherObject)
     {
