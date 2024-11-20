@@ -4,7 +4,6 @@ using Assets.Scripts.Commons.Enums;
 using Assets.Scripts.Commons.GameManager;
 using Assets.Scripts.Commons.UI;
 using DialogueEditor;
-using TreeEditor;
 using UnityEngine;
 
 namespace Assets.Scripts

@@ -2,6 +2,7 @@ using Assets.Scripts.Commons.Constants;
 using Assets.Scripts.Commons.Enums;
 using Assets.Scripts.Commons.GameManager;
 using Assets.Scripts.Commons.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,7 +39,20 @@ public class ComputerBoss : MonoBehaviour
     void Start()
     {
         _Jefe = FindObjectOfType<Jefe>();
+        GameManager.GetGameManager().OnRestart += Reiniciarvariables;
     }
+    private void OnDestroy()
+    {
+        GameManager.GetGameManager().OnRestart -= Reiniciarvariables;
+    }
+
+    private void Reiniciarvariables()
+    {
+        isViewing = false;
+        inCollision = false;
+        lookingcomputer = false;
+    }
+
     void Update()
     {
         InteractComputerBoss();
