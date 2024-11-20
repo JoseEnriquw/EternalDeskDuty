@@ -28,9 +28,10 @@ public class Kate : MonoBehaviour
     [SerializeField] private bool isLoop = true;   
     [SerializeField] private bool GotoBathroom =false;
     [SerializeField] private float waitTime = 60f;
+    [SerializeField] private Transform initialPostition;
     private bool favorresponse = false;
-    [SerializeField] private NPCConversation myConversation;   
-    private bool firstConversation= false;
+    [SerializeField] private NPCConversation myConversation;
+    [SerializeField]  private bool firstConversation= false;
     public bool IknowKateBirthday = false;
     public bool SaidHappyBirthday = false;
     public bool Cake =false;
@@ -49,17 +50,50 @@ public class Kate : MonoBehaviour
 
     [SerializeField] private KateStatesEnum currentState;
     private bool routineStarted = false;
+
+    private static Kate instance;
+    public static Kate Instance => instance;
+
+    void Awake()
+    {
+        // Singleton Pattern
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
-    {       
-        wayPointIndex = 0;        
+    {
+        wayPointIndex = 0;
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();       
+        rb = GetComponent<Rigidbody>();
 
         previousPosition = new Vector3(rb.transform.position.x, 0.0f, rb.transform.position.z);
-        currentState = KateStatesEnum.Idle;       
-        
+        currentState = KateStatesEnum.Idle;
+        GameManager.GetGameManager().OnRestart += Reiniciarvariables;
     }
-   
+
+    private void OnDestroy()
+    {
+        GameManager.GetGameManager().OnRestart -= Reiniciarvariables;
+    }
+    private void Reiniciarvariables()
+    {
+        isSit = false;
+        isLoop = true;
+        GotoBathroom = false;
+        favorresponse = false;
+        firstConversation = false;
+        IknowKateBirthday = false;
+        SaidHappyBirthday = false;
+        Cake = false;
+        inLoop = false;
+        routineStarted = false;
+    }
     // Update is called once per frame
     void Update()
     {      
@@ -112,6 +146,8 @@ public class Kate : MonoBehaviour
         }
         
     }
+
+   
 
     private void CleanAnimationState()
     {
@@ -197,7 +233,7 @@ public class Kate : MonoBehaviour
         if (GameManager.GetGameManager().GetRestartCount() > 3)
             Morethan1 = GameManager.GetGameManager().GetRestartCount();
 
-        if (!firstConversation)
+        if (!firstConversation )
         {
             currentState = KateStatesEnum.Idle;
             GameManager.GetGameManager().SetEnablePlayerInput(false);

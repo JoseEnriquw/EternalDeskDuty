@@ -8,7 +8,7 @@ public class ClienteEspecial : MonoBehaviour
     [SerializeField] private GameObject defaultPanel;       
     [SerializeField] private GameObject specialPanel;
     [SerializeField] private GameObject background;
-    [SerializeField] private bool callLisen;
+    [SerializeField] private bool callLisen = false;
     Leonard_Coffe _lisencall;
     void Start()
     {

@@ -2,6 +2,7 @@ using Assets.Scripts.Commons.Constants;
 using Assets.Scripts.Commons.Enums;
 using Assets.Scripts.Commons.GameManager;
 using Assets.Scripts.Commons.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,8 +43,24 @@ public class Printer : MonoBehaviour
         Reports.DeliverySanchezReport = false;
         Reports.DeliveryMartinezReports = false;
         Reports.DeliveryBossReports = false;
-
+        GameManager.GetGameManager().OnRestart += Reiniciarvariables;
     }
+    private void OnDestroy()
+    {
+        GameManager.GetGameManager().OnRestart -= Reiniciarvariables;
+    }
+
+    private void Reiniciarvariables()
+    {
+        Reports.HasPrintBossReports = false;
+        Reports.HasPrintMartinezReports = false;
+        Reports.HasPrintSanchezReport = false;
+
+        Reports.DeliverySanchezReport = false;
+        Reports.DeliveryMartinezReports = false;
+        Reports.DeliveryBossReports = false;
+    }
+
 
     // Update is called once per frame
     void Update()
