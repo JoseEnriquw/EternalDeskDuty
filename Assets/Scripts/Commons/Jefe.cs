@@ -201,6 +201,7 @@ public class Jefe : MonoBehaviour
             Debug.Log("ME ENGANCHO");
             //AGREGAR GRITO DEL JEFE
             UIManager.Instance.HidePanel(UIPanelTypeEnum.ComputerBoss);
+            UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
             GameManager.GetGameManager().RestartScene(5);
         }
     }
