@@ -35,7 +35,18 @@ namespace Assets.Scripts.Commons.GameManager
         }  
         public void RestartScene(float seconds)
         {
-            StartCoroutine(EjecutarConDelay(seconds, () => { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }));
+            GameObject canvas = GameObject.Find("Canvas");
+            if (canvas != null)
+            {
+                // Itera sobre todos los hijos del Canvas
+                foreach (Transform child in canvas.transform)
+                {
+                    // Desactiva cada hijo
+                    child.gameObject.SetActive(false);
+                }
+            }
+
+                StartCoroutine(EjecutarConDelay(seconds, () => { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }));
             CustomTimer.Instance.ResetTimer();
             restartCount++;
             Debug.Log("Restart number:"+restartCount);
