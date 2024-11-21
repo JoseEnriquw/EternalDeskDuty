@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ca37881dd9c75458b00588c151fa18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 5
+  waitTime: 150
   waitTimeToRestart: 2
   myConversation: {fileID: 2886232099904690155}
 --- !u!114 &2886232099904690155
@@ -182,26 +182,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 44
-  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":996.5,"yPos":19},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Who
-    are you?","parentUIDs":[0],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":1005.5,"yPos":287},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"What
-    code? What are you talking about?","parentUIDs":[3],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":29}],"EditorInfo":{"isRoot":false,"xPos":770.5,"yPos":20},"ID":22,"ParamActions":[],"TMPFontGUID":null,"Text":"What
-    kind of joke is this?","parentUIDs":[0],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":30}],"EditorInfo":{"isRoot":false,"xPos":530.5,"yPos":17},"ID":24,"ParamActions":[],"TMPFontGUID":null,"Text":"Who
-    are you, how do you know this?","parentUIDs":[0],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":31}],"EditorInfo":{"isRoot":false,"xPos":286.5,"yPos":21},"ID":25,"ParamActions":[],"TMPFontGUID":null,"Text":"
-    How can I escape from here?","parentUIDs":[0],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":33}],"EditorInfo":{"isRoot":false,"xPos":277.5,"yPos":259},"ID":32,"ParamActions":[],"TMPFontGUID":null,"Text":"Can''t
-    you give me the code?","parentUIDs":[31],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":36}],"EditorInfo":{"isRoot":false,"xPos":289.5,"yPos":480},"ID":35,"ParamActions":[],"TMPFontGUID":null,"Text":"but
-    the code is inside the office? ","parentUIDs":[33],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":39}],"EditorInfo":{"isRoot":false,"xPos":66.5,"yPos":26},"ID":38,"ParamActions":[],"TMPFontGUID":null,"Text":"Are
-    you sure I can leave?","parentUIDs":[0],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":767.5,"yPos":291},"ID":40,"ParamActions":[],"TMPFontGUID":null,"Text":"ok..","parentUIDs":[29],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":531.5,"yPos":291},"ID":41,"ParamActions":[],"TMPFontGUID":null,"Text":"I''m
-    going to try it","parentUIDs":[30],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":288.5,"yPos":806},"ID":42,"ParamActions":[],"TMPFontGUID":null,"Text":"if
-    you say so","parentUIDs":[37],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":68.5,"yPos":264},"ID":43,"ParamActions":[],"TMPFontGUID":null,"Text":"I
-    don''t believe you","parentUIDs":[39],"SpeechUID":-1}],"Parameters":[{"__type":"EditableBoolParameter:#DialogueEditor","ParameterName":"inLoop","BoolValue":false},{"__type":"EditableIntParameter:#DialogueEditor","ParameterName":"Loop1","IntValue":0}],"SpeechNodes":[{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":2},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"inLoop","CheckType":0,"RequiredValue":true}],"NodeUID":22},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"inLoop","CheckType":0,"RequiredValue":true},{"__type":"EditableIntCondition:#DialogueEditor","ParameterName":"Loop1","CheckType":0,"RequiredValue":2}],"NodeUID":24},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"inLoop","CheckType":0,"RequiredValue":true},{"__type":"EditableIntCondition:#DialogueEditor","ParameterName":"Loop1","CheckType":0,"RequiredValue":3}],"NodeUID":25},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"inLoop","CheckType":0,"RequiredValue":true},{"__type":"EditableIntCondition:#DialogueEditor","ParameterName":"Loop1","CheckType":0,"RequiredValue":4}],"NodeUID":38}],"EditorInfo":{"isRoot":true,"xPos":532.5,"yPos":-183},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Listen
-    to me you need the code","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":995.5,"yPos":160},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"listen
-    to me, you need to get the code and dial it on the phone","parentUIDs":[2],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":40}],"EditorInfo":{"isRoot":false,"xPos":762.5,"yPos":156},"ID":29,"ParamActions":[],"TMPFontGUID":null,"Text":"This
-    is no joke.Get the code","parentUIDs":[22],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":41}],"EditorInfo":{"isRoot":false,"xPos":529.5,"yPos":149},"ID":30,"ParamActions":[],"TMPFontGUID":null,"Text":"it
-    doesn''t matter, I''m just trying to help you, give me the code!","parentUIDs":[24],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":32}],"EditorInfo":{"isRoot":false,"xPos":287.5,"yPos":148},"ID":31,"ParamActions":[],"TMPFontGUID":null,"Text":"You
-    can only escape by getting the code.","parentUIDs":[25],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":35}],"EditorInfo":{"isRoot":false,"xPos":285.5,"yPos":360},"ID":33,"ParamActions":[],"TMPFontGUID":null,"Text":"It
-    changes every time","parentUIDs":[32],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":37}],"EditorInfo":{"isRoot":false,"xPos":289.5,"yPos":573},"ID":36,"ParamActions":[],"TMPFontGUID":null,"Text":"Yes,
-    it is in the office","parentUIDs":[35],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":42}],"EditorInfo":{"isRoot":false,"xPos":288.5,"yPos":692},"ID":37,"ParamActions":[],"TMPFontGUID":null,"Text":"You
-    need to trust me and get","parentUIDs":[36],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":43}],"EditorInfo":{"isRoot":false,"xPos":63.5,"yPos":152},"ID":39,"ParamActions":[],"TMPFontGUID":null,"Text":"Yes,
+  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":1126.5,"yPos":-75},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Who
+    are you?","parentUIDs":[0],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":1136.5,"yPos":193},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"What
+    code? What are you talking about?","parentUIDs":[3],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":29}],"EditorInfo":{"isRoot":false,"xPos":900.5,"yPos":-74},"ID":22,"ParamActions":[],"TMPFontGUID":null,"Text":"What
+    kind of joke is this?","parentUIDs":[0],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":30}],"EditorInfo":{"isRoot":false,"xPos":660.5,"yPos":-77},"ID":24,"ParamActions":[],"TMPFontGUID":null,"Text":"Who
+    are you, how do you know this?","parentUIDs":[0],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":31}],"EditorInfo":{"isRoot":false,"xPos":416.5,"yPos":-73},"ID":25,"ParamActions":[],"TMPFontGUID":null,"Text":"
+    How can I escape from here?","parentUIDs":[0],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":33}],"EditorInfo":{"isRoot":false,"xPos":407.5,"yPos":165},"ID":32,"ParamActions":[],"TMPFontGUID":null,"Text":"Can''t
+    you give me the code?","parentUIDs":[31],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":36}],"EditorInfo":{"isRoot":false,"xPos":419.5,"yPos":386},"ID":35,"ParamActions":[],"TMPFontGUID":null,"Text":"but
+    the code is inside the office? ","parentUIDs":[33],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":39}],"EditorInfo":{"isRoot":false,"xPos":196.5,"yPos":-68},"ID":38,"ParamActions":[],"TMPFontGUID":null,"Text":"Are
+    you sure I can leave?","parentUIDs":[0],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":893.5,"yPos":195},"ID":40,"ParamActions":[],"TMPFontGUID":null,"Text":"ok..","parentUIDs":[29],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":658.5,"yPos":197},"ID":41,"ParamActions":[],"TMPFontGUID":null,"Text":"I''m
+    going to try it","parentUIDs":[30],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":415.5,"yPos":713},"ID":42,"ParamActions":[],"TMPFontGUID":null,"Text":"if
+    you say so","parentUIDs":[37],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":198.5,"yPos":170},"ID":43,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    don''t believe you","parentUIDs":[39],"SpeechUID":-1}],"Parameters":[{"__type":"EditableBoolParameter:#DialogueEditor","ParameterName":"inLoop","BoolValue":false},{"__type":"EditableIntParameter:#DialogueEditor","ParameterName":"Loop1","IntValue":0}],"SpeechNodes":[{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":2},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"inLoop","CheckType":0,"RequiredValue":true}],"NodeUID":22},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"inLoop","CheckType":0,"RequiredValue":true},{"__type":"EditableIntCondition:#DialogueEditor","ParameterName":"Loop1","CheckType":0,"RequiredValue":2}],"NodeUID":24},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"inLoop","CheckType":0,"RequiredValue":true},{"__type":"EditableIntCondition:#DialogueEditor","ParameterName":"Loop1","CheckType":0,"RequiredValue":3}],"NodeUID":25},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[{"__type":"EditableBoolCondition:#DialogueEditor","ParameterName":"inLoop","CheckType":0,"RequiredValue":true},{"__type":"EditableIntCondition:#DialogueEditor","ParameterName":"Loop1","CheckType":0,"RequiredValue":4}],"NodeUID":38}],"EditorInfo":{"isRoot":true,"xPos":662.5,"yPos":-277},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Listen
+    to me you need the code","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":1125.5,"yPos":66},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"listen
+    to me, you need to get the code and dial it on the phone","parentUIDs":[2],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":40}],"EditorInfo":{"isRoot":false,"xPos":892.5,"yPos":62},"ID":29,"ParamActions":[],"TMPFontGUID":null,"Text":"This
+    is no joke.Get the code","parentUIDs":[22],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":41}],"EditorInfo":{"isRoot":false,"xPos":659.5,"yPos":55},"ID":30,"ParamActions":[],"TMPFontGUID":null,"Text":"it
+    doesn''t matter, I''m just trying to help you, give me the code!","parentUIDs":[24],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":32}],"EditorInfo":{"isRoot":false,"xPos":417.5,"yPos":54},"ID":31,"ParamActions":[],"TMPFontGUID":null,"Text":"You
+    can only escape by getting the code.","parentUIDs":[25],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":35}],"EditorInfo":{"isRoot":false,"xPos":415.5,"yPos":266},"ID":33,"ParamActions":[],"TMPFontGUID":null,"Text":"It
+    changes every time","parentUIDs":[32],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":37}],"EditorInfo":{"isRoot":false,"xPos":419.5,"yPos":479},"ID":36,"ParamActions":[],"TMPFontGUID":null,"Text":"Yes,
+    it is in the office","parentUIDs":[35],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":42}],"EditorInfo":{"isRoot":false,"xPos":418.5,"yPos":598},"ID":37,"ParamActions":[],"TMPFontGUID":null,"Text":"You
+    need to trust me and get","parentUIDs":[36],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":43}],"EditorInfo":{"isRoot":false,"xPos":193.5,"yPos":58},"ID":39,"ParamActions":[],"TMPFontGUID":null,"Text":"Yes,
     you can the same thing happened to me","parentUIDs":[38],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Anonymous","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1}]}'
   saveVersion: 110
   DefaultName: 
@@ -254,7 +254,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7061135642889225534}
         m_TargetAssemblyTypeName: Assets.Scripts.PhoneCall, Assembly-CSharp
-        m_MethodName: RestartScene
+        m_MethodName: MostrarTelefono
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -499,7 +499,7 @@ MonoBehaviour:
   NodeID: 3
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
-  Audio: {fileID: 8300000, guid: 8350a7efb53259448acae6558c8f3403, type: 3}
+  Audio: {fileID: 8300000, guid: 6d673e7bb8f0f3c42b83c45456550a45, type: 3}
 --- !u!114 &6690953977496485560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,7 +517,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7061135642889225534}
         m_TargetAssemblyTypeName: Assets.Scripts.PhoneCall, Assembly-CSharp
-        m_MethodName: RestartScene
+        m_MethodName: MostrarTelefono
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1309,7 +1309,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7061135642889225534}
         m_TargetAssemblyTypeName: Assets.Scripts.PhoneCall, Assembly-CSharp
-        m_MethodName: RestartScene
+        m_MethodName: MostrarTelefono
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1340,7 +1340,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7061135642889225534}
         m_TargetAssemblyTypeName: Assets.Scripts.PhoneCall, Assembly-CSharp
-        m_MethodName: RestartScene
+        m_MethodName: MostrarTelefono
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1371,7 +1371,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7061135642889225534}
         m_TargetAssemblyTypeName: Assets.Scripts.PhoneCall, Assembly-CSharp
-        m_MethodName: RestartScene
+        m_MethodName: MostrarTelefono
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1402,7 +1402,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7061135642889225534}
         m_TargetAssemblyTypeName: Assets.Scripts.PhoneCall, Assembly-CSharp
-        m_MethodName: RestartScene
+        m_MethodName: MostrarTelefono
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

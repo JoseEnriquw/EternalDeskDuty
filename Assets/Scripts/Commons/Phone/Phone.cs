@@ -90,11 +90,11 @@ public class Phone : MonoBehaviour
     }
     private void ExecuteIncorrectAction()
     {
-        Debug.Log("¡Código incorrecto! Intentar nuevamente...");
-        nextloopsource.PlayOneShot(nextloop);
-        Invoke("next", 5.0f);
-        
-        
+        //Debug.Log("¡Código incorrecto! Intentar nuevamente...");
+        //nextloopsource.PlayOneShot(nextloop);
+        //Invoke("next", 5.0f);
+        GameManager.GetGameManager().RestartScene(1);
+
     }
     public void ResetInput()
     {

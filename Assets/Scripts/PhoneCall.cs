@@ -4,6 +4,8 @@ using Assets.Scripts.Commons.Enums;
 using Assets.Scripts.Commons.GameManager;
 using Assets.Scripts.Commons.UI;
 using DialogueEditor;
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -86,9 +88,22 @@ namespace Assets.Scripts
             GameManager.GetGameManager().RestartScene(waitTimeToRestart);
         }
 
-        public void mostrarTelefono()
+        public void MostrarTelefono()
         {
-            UIManager.Instance.ShowPanel(UIPanelTypeEnum.Telefono);
+            StartCoroutine(EjecutarConDelay(2f, () => 
+            { 
+                UIManager.Instance.ShowPanel(UIPanelTypeEnum.Telefono);
+                GameManager.GetGameManager().SetEnablePlayerInput(false);
+            }));
+        }
+
+        IEnumerator EjecutarConDelay(float seconds, Action action)
+        {
+            yield return new WaitForSeconds(seconds);
+
+            // Código que se ejecuta después del delay
+            Debug.Log($"Han pasado {seconds} segundos");
+            action?.Invoke();
         }
     }
 }
