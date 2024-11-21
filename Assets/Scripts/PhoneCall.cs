@@ -15,18 +15,24 @@ namespace Assets.Scripts
         [SerializeField] private float waitTime;
         [SerializeField] private float waitTimeToRestart;
         [SerializeField] private NPCConversation myConversation;
+        [SerializeField] private float timeToAnswer;
         private AudioSource audioSource;
         private bool isCalling;
         private bool answered;
         private bool inCollision;
         private int Loop1=0;
         private bool inLoop = false;
+        private float answerTimer;
+        private bool isRunning;
+
         private void Start()
         {
             audioSource = GetComponent<AudioSource>();
             isCalling = false;
             answered = false;
             inCollision=false;
+            answerTimer=0;
+            isRunning = false;
         }
 
         private void Update()
@@ -38,8 +44,17 @@ namespace Assets.Scripts
                     audioSource.Play();
                     isCalling = true;
                     GameManager.GetGameManager().LockPanels();
+                    isRunning = true;
                 }
                 AnsweringPhone();
+                if (isRunning)
+                {
+                    if (answerTimer >= timeToAnswer && !answered)
+                    {
+                        RestartScene();
+                    }
+                    answerTimer += Time.deltaTime;
+                }
             }
         }
 
@@ -47,9 +62,10 @@ namespace Assets.Scripts
         {
             if (Input.GetKeyDown(KeyCode.E) && inCollision)
             {
+                isRunning = false;
                 if (GameManager.GetGameManager().GetRestartCount() > 0)
                     inLoop = true;
-
+                    
                 if (GameManager.GetGameManager().GetRestartCount() >1)
                     Loop1 = GameManager.GetGameManager().GetRestartCount();
 
