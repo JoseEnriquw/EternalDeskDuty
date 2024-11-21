@@ -24,6 +24,7 @@ public class Jefe : MonoBehaviour
     [SerializeField] private bool GotoBathroom =false;
     [SerializeField] private float waitTime = 60f;
     public bool BossisGone = false;
+    public AudioSource audioSource;
 
     private Transform sitPoint;
 
@@ -198,8 +199,8 @@ public class Jefe : MonoBehaviour
     {
         if (_ComputerBoss.lookingcomputer)
         {
-            Debug.Log("ME ENGANCHO");
-            //AGREGAR GRITO DEL JEFE
+            //Debug.Log("ME ENGANCHO");
+            audioSource.Play();
             UIManager.Instance.HidePanel(UIPanelTypeEnum.ComputerBoss);
             UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
             GameManager.GetGameManager().RestartScene(5);

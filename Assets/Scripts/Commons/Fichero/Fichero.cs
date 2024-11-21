@@ -42,7 +42,7 @@ public class Fichero : MonoBehaviour
 
     private void InteractFichero()
     {
-        if (Input.GetKeyDown(KeyCode.E) && inCollision && !isPanelsLocked)
+        if (Input.GetKeyDown(KeyCode.E) && inCollision)
         {
             if (isViewing)
             {

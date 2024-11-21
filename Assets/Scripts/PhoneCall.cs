@@ -4,6 +4,8 @@ using Assets.Scripts.Commons.Enums;
 using Assets.Scripts.Commons.GameManager;
 using Assets.Scripts.Commons.UI;
 using DialogueEditor;
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -13,18 +15,24 @@ namespace Assets.Scripts
         [SerializeField] private float waitTime;
         [SerializeField] private float waitTimeToRestart;
         [SerializeField] private NPCConversation myConversation;
+        [SerializeField] private float timeToAnswer;
         private AudioSource audioSource;
         private bool isCalling;
         private bool answered;
         private bool inCollision;
         private int Loop1=0;
         private bool inLoop = false;
+        private float answerTimer;
+        private bool isRunning;
+
         private void Start()
         {
             audioSource = GetComponent<AudioSource>();
             isCalling = false;
             answered = false;
             inCollision=false;
+            answerTimer=0;
+            isRunning = false;
         }
 
         private void Update()
@@ -36,8 +44,17 @@ namespace Assets.Scripts
                     audioSource.Play();
                     isCalling = true;
                     GameManager.GetGameManager().LockPanels();
+                    isRunning = true;
                 }
                 AnsweringPhone();
+                if (isRunning)
+                {
+                    if (answerTimer >= timeToAnswer && !answered)
+                    {
+                        RestartScene();
+                    }
+                    answerTimer += Time.deltaTime;
+                }
             }
         }
 
@@ -45,9 +62,10 @@ namespace Assets.Scripts
         {
             if (Input.GetKeyDown(KeyCode.E) && inCollision)
             {
+                isRunning = false;
                 if (GameManager.GetGameManager().GetRestartCount() > 0)
                     inLoop = true;
-
+                    
                 if (GameManager.GetGameManager().GetRestartCount() >1)
                     Loop1 = GameManager.GetGameManager().GetRestartCount();
 
@@ -56,7 +74,6 @@ namespace Assets.Scripts
                 audioSource.Stop();
                 UIManager.Instance.HidePanel(UIPanelTypeEnum.Interactive);
                 GameManager.GetGameManager().SetEnablePlayerInput(false);
-                UIManager.Instance.ShowPanel(UIPanelTypeEnum.Telefono);
                 ConversationManager.Instance.StartConversation(myConversation);
                 ConversationManager.Instance.SetBool("inLoop", inLoop);
                 ConversationManager.Instance.SetInt("Loop1", Loop1);
@@ -85,6 +102,24 @@ namespace Assets.Scripts
         public void RestartScene()
         {
             GameManager.GetGameManager().RestartScene(waitTimeToRestart);
+        }
+
+        public void MostrarTelefono()
+        {
+            StartCoroutine(EjecutarConDelay(2f, () => 
+            { 
+                UIManager.Instance.ShowPanel(UIPanelTypeEnum.Telefono);
+                GameManager.GetGameManager().SetEnablePlayerInput(false);
+            }));
+        }
+
+        IEnumerator EjecutarConDelay(float seconds, Action action)
+        {
+            yield return new WaitForSeconds(seconds);
+
+            // Código que se ejecuta después del delay
+            Debug.Log($"Han pasado {seconds} segundos");
+            action?.Invoke();
         }
     }
 }
